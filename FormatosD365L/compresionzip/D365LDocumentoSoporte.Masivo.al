@@ -1,3 +1,6 @@
+/// <summary>
+/// Ventana de reporte para generar varios reportes de Documento soporte en forma masiva en un zip
+/// </summary>
 report 50115 "D365LDocumentoSoporteMasivo"
 {
     ProcessingOnly = true;
@@ -10,12 +13,14 @@ report 50115 "D365LDocumentoSoporteMasivo"
         dataitem("Purch. Inv. Header"; "Purch. Inv. Header")
         {
             RequestFilterFields = "Document Date";
-
             trigger OnPreDataItem()
             var
-                // Validaciones iniciales
+            //statement: Report "D365L Comprobante Egresos";
             begin
-                // Construir filtro de Document No. a partir del pref (soporta | y *)
+                // parametres := statement.RunRequestPage();
+                // if parametres = '' then
+                // Error('Debe seleccionar un rango de fecha');
+                //SetRange("Document Type", "Purch. Inv. Header"."Document Type"::Payment);
                 if pref <> '' then
                 SetFilter("No.", pref + '*');
                 zip.CreateZipArchive();
@@ -50,21 +55,22 @@ report 50115 "D365LDocumentoSoporteMasivo"
                 tempBlob: Codeunit "Temp Blob";
                 outs: OutStream;
                 ins: InStream;
-                fileName: Text;
+                fileName: text;
             begin
-                fileName := 'DocumentosSoporte.zip';
+                fileName := 'DocumentoSoporte.zip';
                 tempBlob.CreateOutStream(outs);
                 zip.SaveZipArchive(outs);
                 tempBlob.CreateInStream(ins);
 
-                DownloadFromStream(ins, '','','', fileName);
+                DownloadFromStream(ins, '', '', '', FileName);
             end;
+
         }
     }
-
     requestpage
     {
         SaveValues = true;
+
         layout
         {
             area(content)
@@ -75,16 +81,21 @@ report 50115 "D365LDocumentoSoporteMasivo"
                     field(pref; pref)
                     {
                         ApplicationArea = all;
-                        Caption = 'Prefijo';
-                        ToolTip = 'Ingrese patrón para Document No. (ej: DS* o DS001|DS002)';
+                        caption = 'Prefijo';
+
+
                     }
+
+
                 }
             }
         }
+
     }
 
     var
         parametres: Text;
         zip: Codeunit "Data Compression";
-        pref: Text;
+
+        pref: text;
 }

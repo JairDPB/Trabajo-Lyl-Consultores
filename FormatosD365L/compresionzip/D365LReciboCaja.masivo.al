@@ -1,3 +1,6 @@
+/// <summary>
+/// Ventana de reporte para generar varios reportes de Recibo de caja en forma masiva en un zip
+/// </summary>
 report 50118 "D365LReciboCajaMasivo"
 {
     ProcessingOnly = true;
@@ -5,17 +8,22 @@ report 50118 "D365LReciboCajaMasivo"
     ApplicationArea = All;
     Caption = 'Recibo Caja Masivo';
 
+
     dataset
     {
         dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
         {
-            RequestFilterFields = "Posting Date";
-
+            RequestFilterFields = "Document Date";
             trigger OnPreDataItem()
+            var
+            //statement: Report "D365L Comprobante Egresos";
             begin
+                // parametres := statement.RunRequestPage();
+                // if parametres = '' then
+                // Error('Debe seleccionar un rango de fecha');
+                //SetRange("Document Type", "Purch. Inv. Header"."Document Type"::Payment);
                 if pref <> '' then
                     SetFilter("Document No.", pref + '*');
-
                 zip.CreateZipArchive();
             end;
 
@@ -29,7 +37,7 @@ report 50118 "D365LReciboCajaMasivo"
             begin
                 cashRec := "Cust. Ledger Entry";
                 cashRec.SetRange("Document No.", "Cust. Ledger Entry"."Document No."); // u otro campo identificador
-                cashRec.SetFilter("Posting Date", "Cust. Ledger Entry".GetFilter("Posting Date"));
+                cashRec.SetFilter("Document Date", "Cust. Ledger Entry".GetFilter("Document Date"));
 
                 tempBlob.CreateOutStream(outs);
                 recRef.GetTable(cashRec);
@@ -44,21 +52,21 @@ report 50118 "D365LReciboCajaMasivo"
                 tempBlob: Codeunit "Temp Blob";
                 outs: OutStream;
                 ins: InStream;
-                fileName: Text;
+                fileName: text;
             begin
-                fileName := 'RecibosCaja.zip';
+                fileName := 'ReciboCaja.zip';
                 tempBlob.CreateOutStream(outs);
                 zip.SaveZipArchive(outs);
                 tempBlob.CreateInStream(ins);
-
-                DownloadFromStream(ins,'','','', fileName);
+                DownloadFromStream(ins, '', '', '', FileName);
             end;
+
         }
     }
-
     requestpage
     {
         SaveValues = true;
+
         layout
         {
             area(content)
@@ -69,15 +77,21 @@ report 50118 "D365LReciboCajaMasivo"
                     field(pref; pref)
                     {
                         ApplicationArea = all;
-                        Caption = 'Prefijo';
+                        caption = 'Prefijo';
+
+
                     }
+
+
                 }
             }
         }
+
     }
 
     var
         parametres: Text;
         zip: Codeunit "Data Compression";
-        pref: Text;
+
+        pref: text;
 }

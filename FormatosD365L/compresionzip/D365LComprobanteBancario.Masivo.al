@@ -1,3 +1,6 @@
+/// <summary>
+/// Ventana de reporte para generar varios reportes de conprobante bancario en forma masiva en un zip
+/// </summary>
 report 50114 "D365LComprobanteBancarioMasivo"
 {
     ProcessingOnly = true;
@@ -5,15 +8,20 @@ report 50114 "D365LComprobanteBancarioMasivo"
     ApplicationArea = All;
     Caption = 'Comprobante Bancario Masivo';
 
+
     dataset
     {
         dataitem("Bank Account Ledger Entry"; "Bank Account Ledger Entry")
         {
             RequestFilterFields = "Document Date";
-
             trigger OnPreDataItem()
+            var
+            //statement: Report "D365L Comprobante Egresos";
             begin
-                // Prepara el filtro "Document No." si el usuario lo pasó en pref
+                // parametres := statement.RunRequestPage();
+                // if parametres = '' then
+                // Error('Debe seleccionar un rango de fecha');
+                //SetRange("Document Type", "Purch. Inv. Header"."Document Type"::Payment);
                 if pref <> '' then
                     SetFilter("Document No.", '(' + pref + '* )');
                 zip.CreateZipArchive();
@@ -47,18 +55,18 @@ report 50114 "D365LComprobanteBancarioMasivo"
                 tempBlob: Codeunit "Temp Blob";
                 outs: OutStream;
                 ins: InStream;
-                fileName: Text;
+                fileName: text;
             begin
                 fileName := 'ComprobanteBancario.zip';
                 tempBlob.CreateOutStream(outs);
                 zip.SaveZipArchive(outs);
                 tempBlob.CreateInStream(ins);
 
-                DownloadFromStream(ins,'','','', fileName);
+                DownloadFromStream(ins, '', '', '', FileName);
             end;
+
         }
     }
-
     requestpage
     {
         SaveValues = true;
@@ -73,17 +81,21 @@ report 50114 "D365LComprobanteBancarioMasivo"
                     field(pref; pref)
                     {
                         ApplicationArea = all;
-                        Caption = 'Prefijo';
-                        ToolTip = 'Prefijo o patrón para Document No. (ej: BAN* o BAN001|BAN002)';
+                        caption = 'Prefijo';
+
+
                     }
+
+
                 }
             }
         }
+
     }
 
     var
         parametres: Text;
         zip: Codeunit "Data Compression";
-        pref: Text;
+
+        pref: text;
 }
-//ya cree mi repositorio git

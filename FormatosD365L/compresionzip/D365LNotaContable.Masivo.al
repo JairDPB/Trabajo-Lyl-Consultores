@@ -1,18 +1,27 @@
-report 50111 "D365LNotaContableMasivo"
+/// <summary>
+/// Ventana de reporte para generar varios reportes de Nota contable en forma masiva en un zip
+/// </summary>
+report 50120 "D365LNotaContableMasivo"
 {
     ProcessingOnly = true;
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     Caption = 'Nota Contable Masivo';
 
+
     dataset
     {
-        dataitem("Gen. Journal Line"; "Gen. Journal Line")
+        dataitem("G/L Entry"; "G/L Entry")
         {
-            RequestFilterFields = "Posting Date";
-
+            RequestFilterFields = "Document Date";
             trigger OnPreDataItem()
+            var
+            //statement: Report "D365L Comprobante Egresos";
             begin
+                // parametres := statement.RunRequestPage();
+                // if parametres = '' then
+                // Error('Debe seleccionar un rango de fecha');
+                //SetRange("Document Type", "Purch. Inv. Header"."Document Type"::Payment);
                 if pref <> '' then
                     SetFilter("Document No.", pref + '*');
 
@@ -24,19 +33,22 @@ report 50111 "D365LNotaContableMasivo"
                 tempBlob: Codeunit "Temp Blob";
                 outs: OutStream;
                 ins: InStream;
+                ref: RecordRef;
                 recRef: RecordRef;
-                journalLine: Record "Gen. Journal Line";
+                GLEntryRec: Record "G/L Entry";
+
             begin
-                journalLine := "Gen. Journal Line";
-                journalLine.SetRange("Document No.", "Gen. Journal Line"."Document No.");
-                journalLine.SetFilter("Posting Date", "Gen. Journal Line".GetFilter("Posting Date"));
+                GLEntryRec:="G/L Entry";
+                GLEntryRec.SetRange("Document No.","G/L Entry"."Document No.");
+                GLEntryRec.SetFilter("Document Date","G/L Entry".GetFilter("Document Date"));
 
                 tempBlob.CreateOutStream(outs);
-                recRef.GetTable(journalLine);
+                recRef.GetTable(GLEntryRec);
                 Report.SaveAs(Report::"D365LNotaContable", '', ReportFormat::Pdf, outs, recRef);
 
                 tempBlob.CreateInStream(ins);
-                zip.AddEntry(ins, "Gen. Journal Line"."Document No." + '.pdf');
+                zip.AddEntry(ins, "G/L Entry"."Document No." + '.pdf');
+                
             end;
 
             trigger OnPostDataItem()
@@ -44,21 +56,22 @@ report 50111 "D365LNotaContableMasivo"
                 tempBlob: Codeunit "Temp Blob";
                 outs: OutStream;
                 ins: InStream;
-                fileName: Text;
+                fileName: text;
             begin
-                fileName := 'NotasContables.zip';
+                fileName := 'NotaContable.zip';
                 tempBlob.CreateOutStream(outs);
                 zip.SaveZipArchive(outs);
                 tempBlob.CreateInStream(ins);
 
-                DownloadFromStream(ins,'','','', fileName);
+                DownloadFromStream(ins, '', '', '', FileName);
             end;
+
         }
     }
-
     requestpage
     {
         SaveValues = true;
+
         layout
         {
             area(content)
@@ -69,16 +82,23 @@ report 50111 "D365LNotaContableMasivo"
                     field(pref; pref)
                     {
                         ApplicationArea = all;
-                        Caption = 'Prefijo';
+                        caption = 'Prefijo';
+
+
                     }
+
+
                 }
             }
         }
+
     }
 
     var
         parametres: Text;
         zip: Codeunit "Data Compression";
-        pref: Text;
-        validationList: List of [Text];
+
+        pref: text;
+
+        validationList: List of [text];
 }

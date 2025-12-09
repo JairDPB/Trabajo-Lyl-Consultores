@@ -7,6 +7,8 @@ report 50113 "D365LCajaMenorMasivo"
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     Caption = 'Caja Menor Masivo';
+
+
     dataset
     {
         dataitem("Purch. Inv. Header"; "Purch. Inv. Header")
@@ -33,24 +35,24 @@ report 50113 "D365LCajaMenorMasivo"
                 outs: OutStream;
                 ins: InStream;
                 ref: RecordRef;
-                PurchRec: Record "Purch. Inv. Header";
-
+                purchRec: Record "Purch. Inv. Header";
             begin
-                //record filtrado para pasarlo a Report.SaveAs
-                PurchRec.Reset();
-                PurchRec.SetRange("No.", "Purch. Inv. Header"."No.");
-                PurchRec.SetFilter("Document Date", "Purch. Inv. Header".GetFilter("Document Date"));
-                
+                // Crea un record filtrado para enviar al SaveAs
+                purchRec.SetRange("No.", "Purch. Inv. Header"."No.");
+                purchRec.SetFilter("Document Date", "Purch. Inv. Header".GetFilter("Document Date"));
+
                 tempBlob.CreateOutStream(outs);
-                ref.GetTable(PurchRec);
 
+                // Convierte record en RecordRef
+                ref.GetTable(purchRec);
 
-
+                // Guarda el PDF
                 Report.SaveAs(Report::"D365L Caja Menor", parametres, ReportFormat::Pdf, outs, ref);
-                tempBlob.CreateInStream(Ins);
-                zip.AddEntry(ins, PurchRec."No." + '.pdf');
-            end;
 
+                tempBlob.CreateInStream(ins);
+
+                zip.AddEntry(ins, "Purch. Inv. Header"."No." + '.pdf');
+            end;
             trigger OnPostDataItem()
             var
                 tempBlob: Codeunit "Temp Blob";

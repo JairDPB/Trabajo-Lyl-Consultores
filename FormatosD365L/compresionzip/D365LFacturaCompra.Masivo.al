@@ -1,3 +1,6 @@
+/// <summary>
+/// Ventana de reporte para generar varios reportes de Factura de compra en forma masiva en un zip
+/// </summary>
 report 50116 "D365LFacturaCompraMasivo"
 {
     ProcessingOnly = true;
@@ -5,17 +8,22 @@ report 50116 "D365LFacturaCompraMasivo"
     ApplicationArea = All;
     Caption = 'Factura De Compra Masivo';
 
+
     dataset
     {
         dataitem("Purch. Inv. Header"; "Purch. Inv. Header")
         {
             RequestFilterFields = "Document Date";
-
             trigger OnPreDataItem()
+            var
+            //statement: Report "D365L Comprobante Egresos";
             begin
+                // parametres := statement.RunRequestPage();
+                // if parametres = '' then
+                // Error('Debe seleccionar un rango de fecha');
+                //SetRange("Document Type", "Purch. Inv. Header"."Document Type"::Payment);
                 if pref <> '' then
                     SetFilter("No.", pref + '*');
-
                 zip.CreateZipArchive();
             end;
 
@@ -44,21 +52,22 @@ report 50116 "D365LFacturaCompraMasivo"
                 tempBlob: Codeunit "Temp Blob";
                 outs: OutStream;
                 ins: InStream;
-                fileName: Text;
+                fileName: text;
             begin
-                fileName := 'FacturasCompra.zip';
+                fileName := 'FacturaCompra.zip';
                 tempBlob.CreateOutStream(outs);
                 zip.SaveZipArchive(outs);
                 tempBlob.CreateInStream(ins);
 
-                DownloadFromStream(ins,'','','', fileName);
+                DownloadFromStream(ins, '', '', '', FileName);
             end;
+
         }
     }
-
     requestpage
     {
         SaveValues = true;
+
         layout
         {
             area(content)
@@ -69,15 +78,21 @@ report 50116 "D365LFacturaCompraMasivo"
                     field(pref; pref)
                     {
                         ApplicationArea = all;
-                        Caption = 'Prefijo';
+                        caption = 'Prefijo';
+
+
                     }
+
+
                 }
             }
         }
+
     }
 
     var
         parametres: Text;
         zip: Codeunit "Data Compression";
-        pref: Text;
+
+        pref: text;
 }
