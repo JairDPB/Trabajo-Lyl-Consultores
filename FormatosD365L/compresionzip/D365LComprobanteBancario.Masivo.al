@@ -86,3 +86,4 @@ report 50114 "D365LComprobanteBancarioMasivo"
         zip: Codeunit "Data Compression";
         pref: Text;
 }
+//ya cree mi repositorio git
