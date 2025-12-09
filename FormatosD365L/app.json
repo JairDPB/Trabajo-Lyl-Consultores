@@ -1,0 +1,49 @@
+{
+  "id": "785889f3-45d3-43a5-8789-18dc99d71c03",
+  "name": "D365LFormatosMIG",
+  "publisher": "D365LATAM",
+  "version": "1.0.0.7",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [{
+    "id": "badb1d5c-5bff-4b76-9a66-2d6d2de4183b",
+    "publisher": "D365LATAM",
+    "name": "D365LATAM - Colombia Localization",
+    "version": "23.0.46384.485674"
+  },
+{    
+      "id": "decdc030-82ca-47e4-b8ac-024cd011fc09",
+  "name": "D365LATAM Documento Soporte",
+  "version": "1.0.0.70",
+  "publisher": "D365LATAM"
+},
+{
+  "id": "dd0a9026-55eb-4957-a238-a4ff8bacdcdb",
+  "publisher": "L&L Consultores",
+  "name": "LyLGomezPinzonExt",
+  "version": "1.0.0.79"
+}],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "24.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
