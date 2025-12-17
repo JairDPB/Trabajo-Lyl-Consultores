@@ -1,0 +1,40 @@
+{
+  "id": "8f67f4aa-3509-40ba-ae50-818bf358a93e",
+  "name": "D365LATAM FormatosPR",
+  "publisher": "D365LATAM",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+     {    
+        "id": "5b3c8fb2-3c4d-4e5f-8a6b-7c8d9e0f1a2b",
+    "name": "D365LATAM - Puerto Rico Localization",
+    "version": "26.0.0.2",
+    "publisher": "D365LATAM"
+  }
+
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "26.0.0.0",
+  "idRanges": [
+    {
+      "from": 60100,
+      "to": 60149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": false,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "15.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

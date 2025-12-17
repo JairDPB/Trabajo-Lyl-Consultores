@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="VendLedEntbank">
+          <DataField>VendLedEntbank</DataField>
+        </Field>
+        <Field Name="VendLedEntAcceptedPaymentTolerance">
+          <DataField>VendLedEntAcceptedPaymentTolerance</DataField>
+        </Field>
+        <Field Name="VendLedEntAcceptedPaymentToleranceFormat">
+          <DataField>VendLedEntAcceptedPaymentToleranceFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntAcceptedPmtDiscTolerance">
+          <DataField>VendLedEntAcceptedPmtDiscTolerance</DataField>
+        </Field>
+        <Field Name="VendLedEntAdjustedCurrencyFactor">
+          <DataField>VendLedEntAdjustedCurrencyFactor</DataField>
+        </Field>
+        <Field Name="VendLedEntAdjustedCurrencyFactorFormat">
+          <DataField>VendLedEntAdjustedCurrencyFactorFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntAmount">
+          <DataField>VendLedEntAmount</DataField>
+        </Field>
+        <Field Name="VendLedEntAmountFormat">
+          <DataField>VendLedEntAmountFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntAmountLCY">
+          <DataField>VendLedEntAmountLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntAmountLCYFormat">
+          <DataField>VendLedEntAmountLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntAmounttoApply">
+          <DataField>VendLedEntAmounttoApply</DataField>
+        </Field>
+        <Field Name="VendLedEntAmounttoApplyFormat">
+          <DataField>VendLedEntAmounttoApplyFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntAppliestoDocNo">
+          <DataField>VendLedEntAppliestoDocNo</DataField>
+        </Field>
+        <Field Name="VendLedEntAppliestoDocType">
+          <DataField>VendLedEntAppliestoDocType</DataField>
+        </Field>
+        <Field Name="VendLedEntAppliestoExtDocNo">
+          <DataField>VendLedEntAppliestoExtDocNo</DataField>
+        </Field>
+        <Field Name="VendLedEntAppliestoID">
+          <DataField>VendLedEntAppliestoID</DataField>
+        </Field>
+        <Field Name="VendLedEntApplyingEntry">
+          <DataField>VendLedEntApplyingEntry</DataField>
+        </Field>
+        <Field Name="VendLedEntBalAccountNo">
+          <DataField>VendLedEntBalAccountNo</DataField>
+        </Field>
+        <Field Name="VendLedEntBalAccountType">
+          <DataField>VendLedEntBalAccountType</DataField>
+        </Field>
+        <Field Name="VendLedEntBuyfromVendorNo">
+          <DataField>VendLedEntBuyfromVendorNo</DataField>
+        </Field>
+        <Field Name="VendLedEntClosedatDate">
+          <DataField>VendLedEntClosedatDate</DataField>
+        </Field>
+        <Field Name="VendLedEntClosedbyAmount">
+          <DataField>VendLedEntClosedbyAmount</DataField>
+        </Field>
+        <Field Name="VendLedEntClosedbyAmountFormat">
+          <DataField>VendLedEntClosedbyAmountFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntClosedbyAmountLCY">
+          <DataField>VendLedEntClosedbyAmountLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntClosedbyAmountLCYFormat">
+          <DataField>VendLedEntClosedbyAmountLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntClosedbyCurrencyAmount">
+          <DataField>VendLedEntClosedbyCurrencyAmount</DataField>
+        </Field>
+        <Field Name="VendLedEntClosedbyCurrencyAmountFormat">
+          <DataField>VendLedEntClosedbyCurrencyAmountFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntClosedbyCurrencyCode">
+          <DataField>VendLedEntClosedbyCurrencyCode</DataField>
+        </Field>
+        <Field Name="VendLedEntClosedbyEntryNo">
+          <DataField>VendLedEntClosedbyEntryNo</DataField>
+        </Field>
+        <Field Name="VendLedEntCreditAmount">
+          <DataField>VendLedEntCreditAmount</DataField>
+        </Field>
+        <Field Name="VendLedEntCreditAmountFormat">
+          <DataField>VendLedEntCreditAmountFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntCreditAmountLCY">
+          <DataField>VendLedEntCreditAmountLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntCreditAmountLCYFormat">
+          <DataField>VendLedEntCreditAmountLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntCreditorNo">
+          <DataField>VendLedEntCreditorNo</DataField>
+        </Field>
+        <Field Name="VendLedEntCurrencyCode">
+          <DataField>VendLedEntCurrencyCode</DataField>
+        </Field>
+        <Field Name="VendLedEntDebitAmount">
+          <DataField>VendLedEntDebitAmount</DataField>
+        </Field>
+        <Field Name="VendLedEntDebitAmountFormat">
+          <DataField>VendLedEntDebitAmountFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntDebitAmountLCY">
+          <DataField>VendLedEntDebitAmountLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntDebitAmountLCYFormat">
+          <DataField>VendLedEntDebitAmountLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntDescription">
+          <DataField>VendLedEntDescription</DataField>
+        </Field>
+        <Field Name="VendLedEntDimensionSetID">
+          <DataField>VendLedEntDimensionSetID</DataField>
+        </Field>
+        <Field Name="VendLedEntDocumentDate">
+          <DataField>VendLedEntDocumentDate</DataField>
+        </Field>
+        <Field Name="VendLedEntDocumentNo">
+          <DataField>VendLedEntDocumentNo</DataField>
+        </Field>
+        <Field Name="VendLedEntDocumentType">
+          <DataField>VendLedEntDocumentType</DataField>
+        </Field>
+        <Field Name="VendLedEntDueDate">
+          <DataField>VendLedEntDueDate</DataField>
+        </Field>
+        <Field Name="VendLedEntEntryNo">
+          <DataField>VendLedEntEntryNo</DataField>
+        </Field>
+        <Field Name="VendLedEntExportedtoPaymentFile">
+          <DataField>VendLedEntExportedtoPaymentFile</DataField>
+        </Field>
+        <Field Name="VendLedEntExternalDocumentNo">
+          <DataField>VendLedEntExternalDocumentNo</DataField>
+        </Field>
+        <Field Name="VendLedEntG2LCO_Canceled_Document">
+          <DataField>VendLedEntG2LCO_Canceled_Document</DataField>
+        </Field>
+        <Field Name="VendLedEntG2LCO_Concept_DIAN">
+          <DataField>VendLedEntG2LCO_Concept_DIAN</DataField>
+        </Field>
+        <Field Name="VendLedEntG2LCO_Deductible">
+          <DataField>VendLedEntG2LCO_Deductible</DataField>
+        </Field>
+        <Field Name="VendLedEntG2LCO_Doc__Type_DIAN">
+          <DataField>VendLedEntG2LCO_Doc__Type_DIAN</DataField>
+        </Field>
+        <Field Name="VendLedEntG2LCO_Regime_Type">
+          <DataField>VendLedEntG2LCO_Regime_Type</DataField>
+        </Field>
+        <Field Name="metodpay">
+          <DataField>metodpay</DataField>
+        </Field>
+        <Field Name="VendLedEntGlobalDimension1Code">
+          <DataField>VendLedEntGlobalDimension1Code</DataField>
+        </Field>
+        <Field Name="VendLedEntGlobalDimension2Code">
+          <DataField>VendLedEntGlobalDimension2Code</DataField>
+        </Field>
+        <Field Name="VendLedEntICPartnerCode">
+          <DataField>VendLedEntICPartnerCode</DataField>
+        </Field>
+        <Field Name="VendLedEntInvDiscountLCY">
+          <DataField>VendLedEntInvDiscountLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntInvDiscountLCYFormat">
+          <DataField>VendLedEntInvDiscountLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntJournalBatchName">
+          <DataField>VendLedEntJournalBatchName</DataField>
+        </Field>
+        <Field Name="VendLedEntJournalTemplName">
+          <DataField>VendLedEntJournalTemplName</DataField>
+        </Field>
+        <Field Name="VendLedEntMaxPaymentTolerance">
+          <DataField>VendLedEntMaxPaymentTolerance</DataField>
+        </Field>
+        <Field Name="VendLedEntMaxPaymentToleranceFormat">
+          <DataField>VendLedEntMaxPaymentToleranceFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntMessagetoRecipient">
+          <DataField>VendLedEntMessagetoRecipient</DataField>
+        </Field>
+        <Field Name="VendLedEntNoSeries">
+          <DataField>VendLedEntNoSeries</DataField>
+        </Field>
+        <Field Name="VendLedEntOnHold">
+          <DataField>VendLedEntOnHold</DataField>
+        </Field>
+        <Field Name="VendLedEntOpen">
+          <DataField>VendLedEntOpen</DataField>
+        </Field>
+        <Field Name="VendLedEntOrigPmtDiscPossibleLCY">
+          <DataField>VendLedEntOrigPmtDiscPossibleLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntOrigPmtDiscPossibleLCYFormat">
+          <DataField>VendLedEntOrigPmtDiscPossibleLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntOriginalAmount">
+          <DataField>VendLedEntOriginalAmount</DataField>
+        </Field>
+        <Field Name="VendLedEntOriginalAmountFormat">
+          <DataField>VendLedEntOriginalAmountFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntOriginalAmtLCY">
+          <DataField>VendLedEntOriginalAmtLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntOriginalAmtLCYFormat">
+          <DataField>VendLedEntOriginalAmtLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntOriginalCurrencyFactor">
+          <DataField>VendLedEntOriginalCurrencyFactor</DataField>
+        </Field>
+        <Field Name="VendLedEntOriginalCurrencyFactorFormat">
+          <DataField>VendLedEntOriginalCurrencyFactorFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntCurrency_Factor">
+          <DataField>VendLedEntCurrency_Factor</DataField>
+        </Field>
+        <Field Name="VendLedEntCurrency_FactorFormat">
+          <DataField>VendLedEntCurrency_FactorFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntOriginalPmtDiscPossible">
+          <DataField>VendLedEntOriginalPmtDiscPossible</DataField>
+        </Field>
+        <Field Name="VendLedEntOriginalPmtDiscPossibleFormat">
+          <DataField>VendLedEntOriginalPmtDiscPossibleFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntPaymentMethodCode">
+          <DataField>VendLedEntPaymentMethodCode</DataField>
+        </Field>
+        <Field Name="VendLedEntPaymentReference">
+          <DataField>VendLedEntPaymentReference</DataField>
+        </Field>
+        <Field Name="VendLedEntPmtDiscRcdLCY">
+          <DataField>VendLedEntPmtDiscRcdLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntPmtDiscRcdLCYFormat">
+          <DataField>VendLedEntPmtDiscRcdLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntPmtDiscToleranceDate">
+          <DataField>VendLedEntPmtDiscToleranceDate</DataField>
+        </Field>
+        <Field Name="VendLedEntPmtDiscountDate">
+          <DataField>VendLedEntPmtDiscountDate</DataField>
+        </Field>
+        <Field Name="VendLedEntPmtToleranceLCY">
+          <DataField>VendLedEntPmtToleranceLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntPmtToleranceLCYFormat">
+          <DataField>VendLedEntPmtToleranceLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntPositive">
+          <DataField>VendLedEntPositive</DataField>
+        </Field>
+        <Field Name="VendLedEntPostingDate">
+          <DataField>VendLedEntPostingDate</DataField>
+        </Field>
+        <Field Name="VendLedEntPrepayment">
+          <DataField>VendLedEntPrepayment</DataField>
+        </Field>
+        <Field Name="VendLedEntPurchaseLCY">
+          <DataField>VendLedEntPurchaseLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntPurchaseLCYFormat">
+          <DataField>VendLedEntPurchaseLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntPurchaserCode">
+          <DataField>VendLedEntPurchaserCode</DataField>
+        </Field>
+        <Field Name="VendLedEntReasonCode">
+          <DataField>VendLedEntReasonCode</DataField>
+        </Field>
+        <Field Name="VendLedEntRecipientBankAccount">
+          <DataField>VendLedEntRecipientBankAccount</DataField>
+        </Field>
+        <Field Name="VendLedEntRemainingAmount">
+          <DataField>VendLedEntRemainingAmount</DataField>
+        </Field>
+        <Field Name="VendLedEntRemainingAmountFormat">
+          <DataField>VendLedEntRemainingAmountFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntRemainingAmtLCY">
+          <DataField>VendLedEntRemainingAmtLCY</DataField>
+        </Field>
+        <Field Name="VendLedEntRemainingAmtLCYFormat">
+          <DataField>VendLedEntRemainingAmtLCYFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntRemainingPmtDiscPossible">
+          <DataField>VendLedEntRemainingPmtDiscPossible</DataField>
+        </Field>
+        <Field Name="VendLedEntRemainingPmtDiscPossibleFormat">
+          <DataField>VendLedEntRemainingPmtDiscPossibleFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntRemittoCode">
+          <DataField>VendLedEntRemittoCode</DataField>
+        </Field>
+        <Field Name="VendLedEntReversed">
+          <DataField>VendLedEntReversed</DataField>
+        </Field>
+        <Field Name="VendLedEntReversedEntryNo">
+          <DataField>VendLedEntReversedEntryNo</DataField>
+        </Field>
+        <Field Name="VendLedEntReversedbyEntryNo">
+          <DataField>VendLedEntReversedbyEntryNo</DataField>
+        </Field>
+        <Field Name="VendLedEntShortcutDimension3Code">
+          <DataField>VendLedEntShortcutDimension3Code</DataField>
+        </Field>
+        <Field Name="VendLedEntShortcutDimension4Code">
+          <DataField>VendLedEntShortcutDimension4Code</DataField>
+        </Field>
+        <Field Name="VendLedEntShortcutDimension5Code">
+          <DataField>VendLedEntShortcutDimension5Code</DataField>
+        </Field>
+        <Field Name="VendLedEntShortcutDimension6Code">
+          <DataField>VendLedEntShortcutDimension6Code</DataField>
+        </Field>
+        <Field Name="VendLedEntShortcutDimension7Code">
+          <DataField>VendLedEntShortcutDimension7Code</DataField>
+        </Field>
+        <Field Name="VendLedEntShortcutDimension8Code">
+          <DataField>VendLedEntShortcutDimension8Code</DataField>
+        </Field>
+        <Field Name="VendLedEntSourceCode">
+          <DataField>VendLedEntSourceCode</DataField>
+        </Field>
+        <Field Name="VendLedEntSystemCreatedAt">
+          <DataField>VendLedEntSystemCreatedAt</DataField>
+        </Field>
+        <Field Name="VendLedEntSystemCreatedBy">
+          <DataField>VendLedEntSystemCreatedBy</DataField>
+        </Field>
+        <Field Name="VendLedEntSystemId">
+          <DataField>VendLedEntSystemId</DataField>
+        </Field>
+        <Field Name="VendLedEntSystemModifiedAt">
+          <DataField>VendLedEntSystemModifiedAt</DataField>
+        </Field>
+        <Field Name="VendLedEntSystemModifiedBy">
+          <DataField>VendLedEntSystemModifiedBy</DataField>
+        </Field>
+        <Field Name="VendLedEntTransactionNo">
+          <DataField>VendLedEntTransactionNo</DataField>
+        </Field>
+        <Field Name="VendLedEntUserID">
+          <DataField>VendLedEntUserID</DataField>
+        </Field>
+        <Field Name="VendLedEntVendorName">
+          <DataField>VendLedEntVendorName</DataField>
+        </Field>
+        <Field Name="VendLedEntVendorNo">
+          <DataField>VendLedEntVendorNo</DataField>
+        </Field>
+        <Field Name="VendLedEnttotalAmount_">
+          <DataField>VendLedEnttotalAmount_</DataField>
+        </Field>
+        <Field Name="VendLedEnttotalAmount_Format">
+          <DataField>VendLedEnttotalAmount_Format</DataField>
+        </Field>
+        <Field Name="VendLedEntVendorPostingGroup">
+          <DataField>VendLedEntVendorPostingGroup</DataField>
+        </Field>
+        <Field Name="VendLedEntamountwtax">
+          <DataField>VendLedEntamountwtax</DataField>
+        </Field>
+        <Field Name="VendLedEntamountwtaxFormat">
+          <DataField>VendLedEntamountwtaxFormat</DataField>
+        </Field>
+        <Field Name="VendLedEntAmountInWordsNew">
+          <DataField>VendLedEntAmountInWordsNew</DataField>
+        </Field>
+        <Field Name="CompanyInfoVAT_Registration_No">
+          <DataField>CompanyInfoVAT_Registration_No</DataField>
+        </Field>
+        <Field Name="CompanyInfoAddress1">
+          <DataField>CompanyInfoAddress1</DataField>
+        </Field>
+        <Field Name="CompanyInfoPicture">
+          <DataField>CompanyInfoPicture</DataField>
+        </Field>
+        <Field Name="CompanyInfoPhone_No_1">
+          <DataField>CompanyInfoPhone_No_1</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="CompanyInfoE_Mail">
+          <DataField>CompanyInfoE_Mail</DataField>
+        </Field>
+        <Field Name="ParDisContable">
+          <DataField>ParDisContable</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="VendorAddress">
+          <DataField>VendorAddress</DataField>
+        </Field>
+        <Field Name="VendorPhone_No_">
+          <DataField>VendorPhone_No_</DataField>
+        </Field>
+        <Field Name="VendorCity">
+          <DataField>VendorCity</DataField>
+        </Field>
+        <Field Name="VendorVAT_Registration_No_Vendor">
+          <DataField>VendorVAT_Registration_No_Vendor</DataField>
+        </Field>
+        <Field Name="VendorE_Mail">
+          <DataField>VendorE_Mail</DataField>
+        </Field>
+        <Field Name="User_Security_ID">
+          <DataField>User_Security_ID</DataField>
+        </Field>
+        <Field Name="User_Name">
+          <DataField>User_Name</DataField>
+        </Field>
+        <Field Name="Check_No_">
+          <DataField>Check_No_</DataField>
+        </Field>
+        <Field Name="D365LCO_Bank_Transaction_No_">
+          <DataField>D365LCO_Bank_Transaction_No_</DataField>
+        </Field>
+        <Field Name="CLENo_">
+          <DataField>CLENo_</DataField>
+        </Field>
+        <Field Name="CLEDocumentDate">
+          <DataField>CLEDocumentDate</DataField>
+        </Field>
+        <Field Name="CLEexternal">
+          <DataField>CLEexternal</DataField>
+        </Field>
+        <Field Name="CLEDescription_">
+          <DataField>CLEDescription_</DataField>
+        </Field>
+        <Field Name="CLEamount">
+          <DataField>CLEamount</DataField>
+        </Field>
+        <Field Name="CLEamountFormat">
+          <DataField>CLEamountFormat</DataField>
+        </Field>
+        <Field Name="ClEVendLedEntLAmountWDiscCur">
+          <DataField>ClEVendLedEntLAmountWDiscCur</DataField>
+        </Field>
+        <Field Name="ClEVendLedEntLAmountWDiscCurFormat">
+          <DataField>ClEVendLedEntLAmountWDiscCurFormat</DataField>
+        </Field>
+        <Field Name="DetVenLedEntVPamount">
+          <DataField>DetVenLedEntVPamount</DataField>
+        </Field>
+        <Field Name="DetVenLedEntVPamountFormat">
+          <DataField>DetVenLedEntVPamountFormat</DataField>
+        </Field>
+        <Field Name="DetVenLedEntVPdescription">
+          <DataField>DetVenLedEntVPdescription</DataField>
+        </Field>
+        <Field Name="DetVenLedEntVPaccount">
+          <DataField>DetVenLedEntVPaccount</DataField>
+        </Field>
+        <Field Name="G_LEntDebit_Amount">
+          <DataField>G_LEntDebit_Amount</DataField>
+        </Field>
+        <Field Name="G_LEntDebit_AmountFormat">
+          <DataField>G_LEntDebit_AmountFormat</DataField>
+        </Field>
+        <Field Name="G_LEntCredit_Amount">
+          <DataField>G_LEntCredit_Amount</DataField>
+        </Field>
+        <Field Name="G_LEntCredit_AmountFormat">
+          <DataField>G_LEntCredit_AmountFormat</DataField>
+        </Field>
+        <Field Name="G_LEnt_Account_No">
+          <DataField>G_LEnt_Account_No</DataField>
+        </Field>
+        <Field Name="G_LAccName">
+          <DataField>G_LAccName</DataField>
+        </Field>
+        <Field Name="description_tax">
+          <DataField>description_tax</DataField>
+        </Field>
+        <Field Name="amount_tax">
+          <DataField>amount_tax</DataField>
+        </Field>
+        <Field Name="amount_taxFormat">
+          <DataField>amount_taxFormat</DataField>
+        </Field>
+        <Field Name="docNo_tax">
+          <DataField>docNo_tax</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
