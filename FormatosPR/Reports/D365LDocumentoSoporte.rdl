@@ -11,6 +11,277 @@
       <rd:DataSourceID>b9a1fb47-83d6-4983-9928-c322376388b7</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="PurchInvHeadNo_">
+          <DataField>PurchInvHeadNo_</DataField>
+        </Field>
+        <Field Name="PurchInvHeadDimensionSetID">
+          <DataField>PurchInvHeadDimensionSetID</DataField>
+        </Field>
+        <Field Name="PurchInvHeadAmount">
+          <DataField>PurchInvHeadAmount</DataField>
+        </Field>
+        <Field Name="PurchInvHeadAmountFormat">
+          <DataField>PurchInvHeadAmountFormat</DataField>
+        </Field>
+        <Field Name="PurchInvHeadAmount_Including_VAT">
+          <DataField>PurchInvHeadAmount_Including_VAT</DataField>
+        </Field>
+        <Field Name="PurchInvHeadAmount_Including_VATFormat">
+          <DataField>PurchInvHeadAmount_Including_VATFormat</DataField>
+        </Field>
+        <Field Name="PurchInvHeadRemaining_Amount">
+          <DataField>PurchInvHeadRemaining_Amount</DataField>
+        </Field>
+        <Field Name="PurchInvHeadRemaining_AmountFormat">
+          <DataField>PurchInvHeadRemaining_AmountFormat</DataField>
+        </Field>
+        <Field Name="PurchInvHeadPay_to_Name">
+          <DataField>PurchInvHeadPay_to_Name</DataField>
+        </Field>
+        <Field Name="PurchInvHeadInvoice_Discount_Amount">
+          <DataField>PurchInvHeadInvoice_Discount_Amount</DataField>
+        </Field>
+        <Field Name="PurchInvHeadInvoice_Discount_AmountFormat">
+          <DataField>PurchInvHeadInvoice_Discount_AmountFormat</DataField>
+        </Field>
+        <Field Name="PurchInvHeadUser_ID">
+          <DataField>PurchInvHeadUser_ID</DataField>
+        </Field>
+        <Field Name="PurchInvHeadDocument_Date">
+          <DataField>PurchInvHeadDocument_Date</DataField>
+        </Field>
+        <Field Name="PurchInvHeadAmountInWords">
+          <DataField>PurchInvHeadAmountInWords</DataField>
+        </Field>
+        <Field Name="PurchInvHeadValor">
+          <DataField>PurchInvHeadValor</DataField>
+        </Field>
+        <Field Name="PurchInvHeadValorFormat">
+          <DataField>PurchInvHeadValorFormat</DataField>
+        </Field>
+        <Field Name="PurchInvHeadCurrency_Code">
+          <DataField>PurchInvHeadCurrency_Code</DataField>
+        </Field>
+        <Field Name="PurchInvHeadVendor_Invoice_No_">
+          <DataField>PurchInvHeadVendor_Invoice_No_</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="CompanyInfoVat">
+          <DataField>CompanyInfoVat</DataField>
+        </Field>
+        <Field Name="CompanyInfoAddress">
+          <DataField>CompanyInfoAddress</DataField>
+        </Field>
+        <Field Name="CompanyInfoPhone">
+          <DataField>CompanyInfoPhone</DataField>
+        </Field>
+        <Field Name="CompanyInfoEMail">
+          <DataField>CompanyInfoEMail</DataField>
+        </Field>
+        <Field Name="CompanyInfoPicture">
+          <DataField>CompanyInfoPicture</DataField>
+        </Field>
+        <Field Name="PurchInvHeadPosting_Date">
+          <DataField>PurchInvHeadPosting_Date</DataField>
+        </Field>
+        <Field Name="PurchInvHeadVAT_Reporting_Date">
+          <DataField>PurchInvHeadVAT_Reporting_Date</DataField>
+        </Field>
+        <Field Name="PurchInvHeadDue_Date">
+          <DataField>PurchInvHeadDue_Date</DataField>
+        </Field>
+        <Field Name="PurchInvHeadPay_to_Vendor_No_">
+          <DataField>PurchInvHeadPay_to_Vendor_No_</DataField>
+        </Field>
+        <Field Name="PurchInvHeadPay_to_Address">
+          <DataField>PurchInvHeadPay_to_Address</DataField>
+        </Field>
+        <Field Name="PurchInvHeadPay_to_Contact">
+          <DataField>PurchInvHeadPay_to_Contact</DataField>
+        </Field>
+        <Field Name="PurchInvHeadPosting_Description">
+          <DataField>PurchInvHeadPosting_Description</DataField>
+        </Field>
+        <Field Name="PurchInvHeadPay_to_City">
+          <DataField>PurchInvHeadPay_to_City</DataField>
+        </Field>
+        <Field Name="PurchInvHeadPay_to_Contact_No_">
+          <DataField>PurchInvHeadPay_to_Contact_No_</DataField>
+        </Field>
+        <Field Name="PurchInvHeadLyL_CUFE">
+          <DataField>PurchInvHeadLyL_CUFE</DataField>
+        </Field>
+        <Field Name="PurchInvHeadLyL_QRInvoiceLink">
+          <DataField>PurchInvHeadLyL_QRInvoiceLink</DataField>
+        </Field>
+        <Field Name="D365L_CO_Resolution_No_">
+          <DataField>D365L_CO_Resolution_No_</DataField>
+        </Field>
+        <Field Name="Starting_Date">
+          <DataField>Starting_Date</DataField>
+        </Field>
+        <Field Name="Starting_No_">
+          <DataField>Starting_No_</DataField>
+        </Field>
+        <Field Name="Ending_No_">
+          <DataField>Ending_No_</DataField>
+        </Field>
+        <Field Name="PurchInvHeadCurrency_Factor">
+          <DataField>PurchInvHeadCurrency_Factor</DataField>
+        </Field>
+        <Field Name="PurchInvHeadCurrency_FactorFormat">
+          <DataField>PurchInvHeadCurrency_FactorFormat</DataField>
+        </Field>
+        <Field Name="salamou">
+          <DataField>salamou</DataField>
+        </Field>
+        <Field Name="salamouFormat">
+          <DataField>salamouFormat</DataField>
+        </Field>
+        <Field Name="piedpag1">
+          <DataField>piedpag1</DataField>
+        </Field>
+        <Field Name="piedpag2">
+          <DataField>piedpag2</DataField>
+        </Field>
+        <Field Name="piedpag3">
+          <DataField>piedpag3</DataField>
+        </Field>
+        <Field Name="marcaAgua">
+          <DataField>marcaAgua</DataField>
+        </Field>
+        <Field Name="metodpay">
+          <DataField>metodpay</DataField>
+        </Field>
+        <Field Name="termspay">
+          <DataField>termspay</DataField>
+        </Field>
+        <Field Name="Your_Reference">
+          <DataField>Your_Reference</DataField>
+        </Field>
+        <Field Name="InvoiceDiscountAmount">
+          <DataField>InvoiceDiscountAmount</DataField>
+        </Field>
+        <Field Name="InvoiceDiscountAmountFormat">
+          <DataField>InvoiceDiscountAmountFormat</DataField>
+        </Field>
+        <Field Name="CalcuSalamount">
+          <DataField>CalcuSalamount</DataField>
+        </Field>
+        <Field Name="CalcuSalamountFormat">
+          <DataField>CalcuSalamountFormat</DataField>
+        </Field>
+        <Field Name="calcudiscuount">
+          <DataField>calcudiscuount</DataField>
+        </Field>
+        <Field Name="calcudiscuountFormat">
+          <DataField>calcudiscuountFormat</DataField>
+        </Field>
+        <Field Name="Calcuamount">
+          <DataField>Calcuamount</DataField>
+        </Field>
+        <Field Name="CalcuamountFormat">
+          <DataField>CalcuamountFormat</DataField>
+        </Field>
+        <Field Name="calcutotal">
+          <DataField>calcutotal</DataField>
+        </Field>
+        <Field Name="calcutotalFormat">
+          <DataField>calcutotalFormat</DataField>
+        </Field>
+        <Field Name="D365L_CO_DS_Date_load">
+          <DataField>D365L_CO_DS_Date_load</DataField>
+        </Field>
+        <Field Name="User_Security_ID">
+          <DataField>User_Security_ID</DataField>
+        </Field>
+        <Field Name="User_Name">
+          <DataField>User_Name</DataField>
+        </Field>
+        <Field Name="E_Mail">
+          <DataField>E_Mail</DataField>
+        </Field>
+        <Field Name="VATEntry_Amount">
+          <DataField>VATEntry_Amount</DataField>
+        </Field>
+        <Field Name="VATEntry_AmountFormat">
+          <DataField>VATEntry_AmountFormat</DataField>
+        </Field>
+        <Field Name="VATEntry_DianDesc">
+          <DataField>VATEntry_DianDesc</DataField>
+        </Field>
+        <Field Name="VATEntry_DianCode">
+          <DataField>VATEntry_DianCode</DataField>
+        </Field>
+        <Field Name="VATEntry_tarifa">
+          <DataField>VATEntry_tarifa</DataField>
+        </Field>
+        <Field Name="VATEntry_tarifaFormat">
+          <DataField>VATEntry_tarifaFormat</DataField>
+        </Field>
+        <Field Name="Calcutax">
+          <DataField>Calcutax</DataField>
+        </Field>
+        <Field Name="CalcutaxFormat">
+          <DataField>CalcutaxFormat</DataField>
+        </Field>
+        <Field Name="PurchInvLineShortcut_Dimension_1_Code">
+          <DataField>PurchInvLineShortcut_Dimension_1_Code</DataField>
+        </Field>
+        <Field Name="PurchInvLineBuyFromVendorNo">
+          <DataField>PurchInvLineBuyFromVendorNo</DataField>
+        </Field>
+        <Field Name="PurchInvLineNoNo">
+          <DataField>PurchInvLineNoNo</DataField>
+        </Field>
+        <Field Name="PurchInvLineLine_No_">
+          <DataField>PurchInvLineLine_No_</DataField>
+        </Field>
+        <Field Name="PurchInvLineTERCERO">
+          <DataField>PurchInvLineTERCERO</DataField>
+        </Field>
+        <Field Name="PurchInvLineNombre">
+          <DataField>PurchInvLineNombre</DataField>
+        </Field>
+        <Field Name="PurchInvLineDescriptionLine">
+          <DataField>PurchInvLineDescriptionLine</DataField>
+        </Field>
+        <Field Name="PurchInvLineUnit_Cost">
+          <DataField>PurchInvLineUnit_Cost</DataField>
+        </Field>
+        <Field Name="PurchInvLineUnit_CostFormat">
+          <DataField>PurchInvLineUnit_CostFormat</DataField>
+        </Field>
+        <Field Name="PurchInvLineAmount">
+          <DataField>PurchInvLineAmount</DataField>
+        </Field>
+        <Field Name="PurchInvLineAmountFormat">
+          <DataField>PurchInvLineAmountFormat</DataField>
+        </Field>
+        <Field Name="PurchInvLineQuantity">
+          <DataField>PurchInvLineQuantity</DataField>
+        </Field>
+        <Field Name="PurchInvLineQuantityFormat">
+          <DataField>PurchInvLineQuantityFormat</DataField>
+        </Field>
+        <Field Name="VatEntrycuenta1">
+          <DataField>VatEntrycuenta1</DataField>
+        </Field>
+        <Field Name="GLAcountName">
+          <DataField>GLAcountName</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -229,7 +500,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Codigo</Value>
+                                                    <Value>Code</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -286,7 +557,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Descripción</Value>
+                                                    <Value>Description</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -345,7 +616,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Cantidad</Value>
+                                                    <Value>Quantity</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -402,7 +673,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Valor Unitario</Value>
+                                                    <Value>Unit Price</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -461,7 +732,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Valor Total</Value>
+                                                    <Value>Total Amount</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -844,9 +1115,9 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Total Bruto</Value>
+                                                    <Value>Gross Amount</Value>
                                                     <Style>
-                                                      <FontSize>8pt</FontSize>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -1063,7 +1334,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Descuento</Value>
+                                                    <Value>Discount Amount</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -1736,9 +2007,9 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Total Neto</Value>
+                                                    <Value>Net Amount</Value>
                                                     <Style>
-                                                      <FontSize>8pt</FontSize>
+                                                      <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -2147,7 +2418,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Nombre o Razón Social:</Value>
+                                                    <Value>Name or legal entity name</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -2230,7 +2501,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>DOCUMENTO SOPORTE N° </Value>
+                                                    <Value>SUPPORT DOCUMENT N° </Value>
                                                     <Style>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
@@ -2273,7 +2544,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Número Documento:</Value>
+                                                    <Value>Document No.</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -2394,7 +2665,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Dirección:</Value>
+                                                    <Value>Address:</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -2544,7 +2815,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Ciudad:</Value>
+                                                    <Value>City:</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -2615,7 +2886,17 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Fecha de Expedición:</Value>
+                                                    <Value>Issue date</Value>
+                                                    <Style>
+                                                      <FontStyle>Normal</FontStyle>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <TextDecoration>None</TextDecoration>
+                                                      <Color>#000000</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Value>:</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -2728,7 +3009,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Teléfono/Celular:</Value>
+                                                    <Value>Pay to contact:</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -2801,7 +3082,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Fecha Envió DIAN:</Value>
+                                                    <Value>DIAN submission date:</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -2985,7 +3266,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Fecha de Vencimiento:</Value>
+                                                    <Value>Due date:</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -3096,7 +3377,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Forma de Pago:</Value>
+                                                    <Value>Method of Payment:</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -3137,6 +3418,7 @@
                                               <PaddingRight>2pt</PaddingRight>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
@@ -3201,7 +3483,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Plazo de Pago:</Value>
+                                                    <Value>Payment Terms</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -3306,7 +3588,17 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Moneda:</Value>
+                                                    <Value>Currency type</Value>
+                                                    <Style>
+                                                      <FontStyle>Normal</FontStyle>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <TextDecoration>None</TextDecoration>
+                                                      <Color>#000000</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Value>:</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -3416,7 +3708,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Orden de Compra:</Value>
+                                                    <Value>Purchase Order No:</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -3524,7 +3816,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Tasa de Cambio:</Value>
+                                                    <Value>Exchange rate</Value>
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -3702,7 +3994,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Documento soporte en adquisiciones efectuadas a no obligados a facturar</Value>
+                      <Value>Supporting document for Purchases Made from Non-Invoice Obligate parties</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -3719,7 +4011,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Artículo 1.6.1.4.12 Decreto Único reglamentario en materia tributaria 1625 de 2016 - Susutituido por el Decreto 358 de 2020 y Resolucion 00042 del 05 mayo de 2020</Value>
+                      <Value>Article 1.6.1.4.12 of the Single Regulatory Decree on Tax Matters No. 1625 of 2016, replaced by Decree 385 of 2020 and resolution No.000042 of May 5, 2020</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>9pt</FontSize>
@@ -3765,6 +4057,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -3804,275 +4102,4 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="PurchInvHeadNo_">
-          <DataField>PurchInvHeadNo_</DataField>
-        </Field>
-        <Field Name="PurchInvHeadDimensionSetID">
-          <DataField>PurchInvHeadDimensionSetID</DataField>
-        </Field>
-        <Field Name="PurchInvHeadAmount">
-          <DataField>PurchInvHeadAmount</DataField>
-        </Field>
-        <Field Name="PurchInvHeadAmountFormat">
-          <DataField>PurchInvHeadAmountFormat</DataField>
-        </Field>
-        <Field Name="PurchInvHeadAmount_Including_VAT">
-          <DataField>PurchInvHeadAmount_Including_VAT</DataField>
-        </Field>
-        <Field Name="PurchInvHeadAmount_Including_VATFormat">
-          <DataField>PurchInvHeadAmount_Including_VATFormat</DataField>
-        </Field>
-        <Field Name="PurchInvHeadRemaining_Amount">
-          <DataField>PurchInvHeadRemaining_Amount</DataField>
-        </Field>
-        <Field Name="PurchInvHeadRemaining_AmountFormat">
-          <DataField>PurchInvHeadRemaining_AmountFormat</DataField>
-        </Field>
-        <Field Name="PurchInvHeadPay_to_Name">
-          <DataField>PurchInvHeadPay_to_Name</DataField>
-        </Field>
-        <Field Name="PurchInvHeadInvoice_Discount_Amount">
-          <DataField>PurchInvHeadInvoice_Discount_Amount</DataField>
-        </Field>
-        <Field Name="PurchInvHeadInvoice_Discount_AmountFormat">
-          <DataField>PurchInvHeadInvoice_Discount_AmountFormat</DataField>
-        </Field>
-        <Field Name="PurchInvHeadUser_ID">
-          <DataField>PurchInvHeadUser_ID</DataField>
-        </Field>
-        <Field Name="PurchInvHeadDocument_Date">
-          <DataField>PurchInvHeadDocument_Date</DataField>
-        </Field>
-        <Field Name="PurchInvHeadAmountInWords">
-          <DataField>PurchInvHeadAmountInWords</DataField>
-        </Field>
-        <Field Name="PurchInvHeadValor">
-          <DataField>PurchInvHeadValor</DataField>
-        </Field>
-        <Field Name="PurchInvHeadValorFormat">
-          <DataField>PurchInvHeadValorFormat</DataField>
-        </Field>
-        <Field Name="PurchInvHeadCurrency_Code">
-          <DataField>PurchInvHeadCurrency_Code</DataField>
-        </Field>
-        <Field Name="PurchInvHeadVendor_Invoice_No_">
-          <DataField>PurchInvHeadVendor_Invoice_No_</DataField>
-        </Field>
-        <Field Name="CompanyInfoName">
-          <DataField>CompanyInfoName</DataField>
-        </Field>
-        <Field Name="CompanyInfoVat">
-          <DataField>CompanyInfoVat</DataField>
-        </Field>
-        <Field Name="CompanyInfoAddress">
-          <DataField>CompanyInfoAddress</DataField>
-        </Field>
-        <Field Name="CompanyInfoPhone">
-          <DataField>CompanyInfoPhone</DataField>
-        </Field>
-        <Field Name="CompanyInfoEMail">
-          <DataField>CompanyInfoEMail</DataField>
-        </Field>
-        <Field Name="CompanyInfoPicture">
-          <DataField>CompanyInfoPicture</DataField>
-        </Field>
-        <Field Name="PurchInvHeadPosting_Date">
-          <DataField>PurchInvHeadPosting_Date</DataField>
-        </Field>
-        <Field Name="PurchInvHeadVAT_Reporting_Date">
-          <DataField>PurchInvHeadVAT_Reporting_Date</DataField>
-        </Field>
-        <Field Name="PurchInvHeadDue_Date">
-          <DataField>PurchInvHeadDue_Date</DataField>
-        </Field>
-        <Field Name="PurchInvHeadPay_to_Vendor_No_">
-          <DataField>PurchInvHeadPay_to_Vendor_No_</DataField>
-        </Field>
-        <Field Name="PurchInvHeadPay_to_Address">
-          <DataField>PurchInvHeadPay_to_Address</DataField>
-        </Field>
-        <Field Name="PurchInvHeadPay_to_Contact">
-          <DataField>PurchInvHeadPay_to_Contact</DataField>
-        </Field>
-        <Field Name="PurchInvHeadPosting_Description">
-          <DataField>PurchInvHeadPosting_Description</DataField>
-        </Field>
-        <Field Name="PurchInvHeadPay_to_City">
-          <DataField>PurchInvHeadPay_to_City</DataField>
-        </Field>
-        <Field Name="PurchInvHeadPay_to_Contact_No_">
-          <DataField>PurchInvHeadPay_to_Contact_No_</DataField>
-        </Field>
-        <Field Name="PurchInvHeadLyL_CUFE">
-          <DataField>PurchInvHeadLyL_CUFE</DataField>
-        </Field>
-        <Field Name="PurchInvHeadLyL_QRInvoiceLink">
-          <DataField>PurchInvHeadLyL_QRInvoiceLink</DataField>
-        </Field>
-        <Field Name="D365L_CO_Resolution_No_">
-          <DataField>D365L_CO_Resolution_No_</DataField>
-        </Field>
-        <Field Name="Starting_Date">
-          <DataField>Starting_Date</DataField>
-        </Field>
-        <Field Name="Starting_No_">
-          <DataField>Starting_No_</DataField>
-        </Field>
-        <Field Name="Ending_No_">
-          <DataField>Ending_No_</DataField>
-        </Field>
-        <Field Name="PurchInvHeadCurrency_Factor">
-          <DataField>PurchInvHeadCurrency_Factor</DataField>
-        </Field>
-        <Field Name="PurchInvHeadCurrency_FactorFormat">
-          <DataField>PurchInvHeadCurrency_FactorFormat</DataField>
-        </Field>
-        <Field Name="salamou">
-          <DataField>salamou</DataField>
-        </Field>
-        <Field Name="salamouFormat">
-          <DataField>salamouFormat</DataField>
-        </Field>
-        <Field Name="piedpag1">
-          <DataField>piedpag1</DataField>
-        </Field>
-        <Field Name="piedpag2">
-          <DataField>piedpag2</DataField>
-        </Field>
-        <Field Name="piedpag3">
-          <DataField>piedpag3</DataField>
-        </Field>
-        <Field Name="marcaAgua">
-          <DataField>marcaAgua</DataField>
-        </Field>
-        <Field Name="metodpay">
-          <DataField>metodpay</DataField>
-        </Field>
-        <Field Name="termspay">
-          <DataField>termspay</DataField>
-        </Field>
-        <Field Name="Your_Reference">
-          <DataField>Your_Reference</DataField>
-        </Field>
-        <Field Name="InvoiceDiscountAmount">
-          <DataField>InvoiceDiscountAmount</DataField>
-        </Field>
-        <Field Name="InvoiceDiscountAmountFormat">
-          <DataField>InvoiceDiscountAmountFormat</DataField>
-        </Field>
-        <Field Name="CalcuSalamount">
-          <DataField>CalcuSalamount</DataField>
-        </Field>
-        <Field Name="CalcuSalamountFormat">
-          <DataField>CalcuSalamountFormat</DataField>
-        </Field>
-        <Field Name="calcudiscuount">
-          <DataField>calcudiscuount</DataField>
-        </Field>
-        <Field Name="calcudiscuountFormat">
-          <DataField>calcudiscuountFormat</DataField>
-        </Field>
-        <Field Name="Calcuamount">
-          <DataField>Calcuamount</DataField>
-        </Field>
-        <Field Name="CalcuamountFormat">
-          <DataField>CalcuamountFormat</DataField>
-        </Field>
-        <Field Name="calcutotal">
-          <DataField>calcutotal</DataField>
-        </Field>
-        <Field Name="calcutotalFormat">
-          <DataField>calcutotalFormat</DataField>
-        </Field>
-        <Field Name="D365L_CO_DS_Date_load">
-          <DataField>D365L_CO_DS_Date_load</DataField>
-        </Field>
-        <Field Name="User_Security_ID">
-          <DataField>User_Security_ID</DataField>
-        </Field>
-        <Field Name="User_Name">
-          <DataField>User_Name</DataField>
-        </Field>
-        <Field Name="E_Mail">
-          <DataField>E_Mail</DataField>
-        </Field>
-        <Field Name="VATEntry_Amount">
-          <DataField>VATEntry_Amount</DataField>
-        </Field>
-        <Field Name="VATEntry_AmountFormat">
-          <DataField>VATEntry_AmountFormat</DataField>
-        </Field>
-        <Field Name="VATEntry_DianDesc">
-          <DataField>VATEntry_DianDesc</DataField>
-        </Field>
-        <Field Name="VATEntry_DianCode">
-          <DataField>VATEntry_DianCode</DataField>
-        </Field>
-        <Field Name="VATEntry_tarifa">
-          <DataField>VATEntry_tarifa</DataField>
-        </Field>
-        <Field Name="VATEntry_tarifaFormat">
-          <DataField>VATEntry_tarifaFormat</DataField>
-        </Field>
-        <Field Name="Calcutax">
-          <DataField>Calcutax</DataField>
-        </Field>
-        <Field Name="CalcutaxFormat">
-          <DataField>CalcutaxFormat</DataField>
-        </Field>
-        <Field Name="PurchInvLineShortcut_Dimension_1_Code">
-          <DataField>PurchInvLineShortcut_Dimension_1_Code</DataField>
-        </Field>
-        <Field Name="PurchInvLineBuyFromVendorNo">
-          <DataField>PurchInvLineBuyFromVendorNo</DataField>
-        </Field>
-        <Field Name="PurchInvLineNoNo">
-          <DataField>PurchInvLineNoNo</DataField>
-        </Field>
-        <Field Name="PurchInvLineLine_No_">
-          <DataField>PurchInvLineLine_No_</DataField>
-        </Field>
-        <Field Name="PurchInvLineTERCERO">
-          <DataField>PurchInvLineTERCERO</DataField>
-        </Field>
-        <Field Name="PurchInvLineNombre">
-          <DataField>PurchInvLineNombre</DataField>
-        </Field>
-        <Field Name="PurchInvLineDescriptionLine">
-          <DataField>PurchInvLineDescriptionLine</DataField>
-        </Field>
-        <Field Name="PurchInvLineUnit_Cost">
-          <DataField>PurchInvLineUnit_Cost</DataField>
-        </Field>
-        <Field Name="PurchInvLineUnit_CostFormat">
-          <DataField>PurchInvLineUnit_CostFormat</DataField>
-        </Field>
-        <Field Name="PurchInvLineAmount">
-          <DataField>PurchInvLineAmount</DataField>
-        </Field>
-        <Field Name="PurchInvLineAmountFormat">
-          <DataField>PurchInvLineAmountFormat</DataField>
-        </Field>
-        <Field Name="PurchInvLineQuantity">
-          <DataField>PurchInvLineQuantity</DataField>
-        </Field>
-        <Field Name="PurchInvLineQuantityFormat">
-          <DataField>PurchInvLineQuantityFormat</DataField>
-        </Field>
-        <Field Name="VatEntrycuenta1">
-          <DataField>VatEntrycuenta1</DataField>
-        </Field>
-        <Field Name="GLAcountName">
-          <DataField>GLAcountName</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>

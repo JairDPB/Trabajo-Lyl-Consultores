@@ -11,6 +11,166 @@
       <rd:DataSourceID>226e1787-3938-47cd-ba55-319314870ea7</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="DimensionSetID">
+          <DataField>DimensionSetID</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="Amount_Including_VAT">
+          <DataField>Amount_Including_VAT</DataField>
+        </Field>
+        <Field Name="Amount_Including_VATFormat">
+          <DataField>Amount_Including_VATFormat</DataField>
+        </Field>
+        <Field Name="Remaining_Amount">
+          <DataField>Remaining_Amount</DataField>
+        </Field>
+        <Field Name="Remaining_AmountFormat">
+          <DataField>Remaining_AmountFormat</DataField>
+        </Field>
+        <Field Name="Pay_to_Name">
+          <DataField>Pay_to_Name</DataField>
+        </Field>
+        <Field Name="Invoice_Discount_Amount">
+          <DataField>Invoice_Discount_Amount</DataField>
+        </Field>
+        <Field Name="Invoice_Discount_AmountFormat">
+          <DataField>Invoice_Discount_AmountFormat</DataField>
+        </Field>
+        <Field Name="User_ID">
+          <DataField>User_ID</DataField>
+        </Field>
+        <Field Name="Document_Date">
+          <DataField>Document_Date</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="Valor">
+          <DataField>Valor</DataField>
+        </Field>
+        <Field Name="ValorFormat">
+          <DataField>ValorFormat</DataField>
+        </Field>
+        <Field Name="Currency_Code">
+          <DataField>Currency_Code</DataField>
+        </Field>
+        <Field Name="Vendor_Invoice_No_">
+          <DataField>Vendor_Invoice_No_</DataField>
+        </Field>
+        <Field Name="CompanyInformationName">
+          <DataField>CompanyInformationName</DataField>
+        </Field>
+        <Field Name="CompanyInformationVat">
+          <DataField>CompanyInformationVat</DataField>
+        </Field>
+        <Field Name="CompanyInformationAddress">
+          <DataField>CompanyInformationAddress</DataField>
+        </Field>
+        <Field Name="CompanyInformationPhone">
+          <DataField>CompanyInformationPhone</DataField>
+        </Field>
+        <Field Name="Posting_Date">
+          <DataField>Posting_Date</DataField>
+        </Field>
+        <Field Name="VAT_Reporting_Date">
+          <DataField>VAT_Reporting_Date</DataField>
+        </Field>
+        <Field Name="Due_Date">
+          <DataField>Due_Date</DataField>
+        </Field>
+        <Field Name="Pay_to_Vendor_No_">
+          <DataField>Pay_to_Vendor_No_</DataField>
+        </Field>
+        <Field Name="Pay_to_Address">
+          <DataField>Pay_to_Address</DataField>
+        </Field>
+        <Field Name="Pay_to_Contact">
+          <DataField>Pay_to_Contact</DataField>
+        </Field>
+        <Field Name="Posting_Description">
+          <DataField>Posting_Description</DataField>
+        </Field>
+        <Field Name="DocRef">
+          <DataField>DocRef</DataField>
+        </Field>
+        <Field Name="Picture">
+          <DataField>Picture</DataField>
+        </Field>
+        <Field Name="Shortcut_Dimension_1_Code">
+          <DataField>Shortcut_Dimension_1_Code</DataField>
+        </Field>
+        <Field Name="TERCERONIT">
+          <DataField>TERCERONIT</DataField>
+        </Field>
+        <Field Name="NoCuenta_">
+          <DataField>NoCuenta_</DataField>
+        </Field>
+        <Field Name="Line_No_">
+          <DataField>Line_No_</DataField>
+        </Field>
+        <Field Name="TERCERO">
+          <DataField>TERCERO</DataField>
+        </Field>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+        </Field>
+        <Field Name="DescriptionLine">
+          <DataField>DescriptionLine</DataField>
+        </Field>
+        <Field Name="Unit_Cost">
+          <DataField>Unit_Cost</DataField>
+        </Field>
+        <Field Name="Unit_CostFormat">
+          <DataField>Unit_CostFormat</DataField>
+        </Field>
+        <Field Name="AmountS">
+          <DataField>AmountS</DataField>
+        </Field>
+        <Field Name="AmountSFormat">
+          <DataField>AmountSFormat</DataField>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="VATEntry_DianDesc">
+          <DataField>VATEntry_DianDesc</DataField>
+        </Field>
+        <Field Name="VATEntry_Amount">
+          <DataField>VATEntry_Amount</DataField>
+        </Field>
+        <Field Name="VATEntry_AmountFormat">
+          <DataField>VATEntry_AmountFormat</DataField>
+        </Field>
+        <Field Name="tarifa">
+          <DataField>tarifa</DataField>
+        </Field>
+        <Field Name="tarifaFormat">
+          <DataField>tarifaFormat</DataField>
+        </Field>
+        <Field Name="numero">
+          <DataField>numero</DataField>
+        </Field>
+        <Field Name="cuenta1">
+          <DataField>cuenta1</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -24,7 +184,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>DATOS DEL PROVEEDOR</Value>
+                        <Value>SUPPLIER INFORMATION</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
@@ -91,7 +251,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Cuenta</Value>
+                                  <Value>Account</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -135,6 +295,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -146,7 +307,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Descripción</Value>
+                                  <Value>Description</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -256,7 +417,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Valor unitario</Value>
+                                  <Value>Unit Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -311,7 +472,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Valor total</Value>
+                                  <Value>Total Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -716,7 +877,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Impuestos detallados</Value>
+                                  <Value>Detailed Taxes</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Segoe UI</FontFamily>
@@ -995,7 +1156,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Pago a N° de proveedor:</Value>
+                                  <Value>Pay to Vendor No.:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1055,7 +1216,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Fecha de emisión documento:</Value>
+                                  <Value>Document Issue Date:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1184,7 +1345,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Fecha registro:</Value>
+                                  <Value>Posting Date:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1253,7 +1414,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Nombre:</Value>
+                                  <Value>Pay to Name:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1313,7 +1474,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Fecha vencimiento:</Value>
+                                  <Value>Due Date:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1382,7 +1543,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Dirección:</Value>
+                                  <Value>Address:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1442,7 +1603,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>N° factura proveedor:</Value>
+                                  <Value>Vendor Invoice No.:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1509,7 +1670,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Moneda:</Value>
+                                  <Value>Currency Code:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1569,7 +1730,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Documento de Referencia:</Value>
+                                  <Value>Reference Document:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1698,7 +1859,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Son: </Value>
+                                  <Value>Amount in Words: </Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1783,7 +1944,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Observaciones:</Value>
+                                  <Value>Remarks:</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1916,7 +2077,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>TOTAL BRUTO</Value>
+                                  <Value>GROSS AMOUNT</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -1987,7 +2148,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>TOTAL IMPUESTOS</Value>
+                                  <Value>TOTAL TAXES</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2098,7 +2259,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>TOTAL, NETO</Value>
+                                  <Value>NET AMOUNT</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2281,7 +2442,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>firma o sello del proveedor</Value>
+                                  <Value>Supplier Signature or Seal</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -2367,7 +2528,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Nota de Ajuste</Value>
+                      <Value>Adjustment Note</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Segoe UI</FontFamily>
@@ -2624,11 +2785,13 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Documento soporte en adquisiciones efectuadas a no obligados a facturar</Value>
+                      <Value>Supporting document for Purchases Made from Non-Invoice Obligate parties</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontWeight>Normal</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
                         <TextDecoration>None</TextDecoration>
+                        <Color>Red</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2651,7 +2814,16 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Artículo 1.6.1.4.12 Decreto Único reglamentario en materia tributaria 1625 de 2016 - Sustituido por el Decreto 358 de 2020 y Resolucion 00042 del 05 mayo de 2020.</Value>
+                      <Value>Article 1.6.1.4.12 of the Single Regulatory Decree on Tax Matters No. 1625 of 2016, replaced by Decree 385 of 2020 and resolution No.000042 of May 5, 2020</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>None</TextDecoration>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>.</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontWeight>Normal</FontWeight>
@@ -2667,7 +2839,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Autorización de numeración Dian (31/08/2020) No18764003482389 desde DS 1 hasta la DS 1000</Value>
+                      <Value>Authorization for Numbering 08/31/2020 No.18764003482389, from DS 1  to DS 1000</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>8pt</FontSize>
@@ -2705,6 +2877,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -2989,164 +3167,4 @@ xnCqq6yzILWqaOQ7OhR4y40mpTJbmGiMpxxPb9X9XU9DUMK2lqUq93GLdSnxRjCdLFcUZym1GKezBt4q
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="DimensionSetID">
-          <DataField>DimensionSetID</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="Amount_Including_VAT">
-          <DataField>Amount_Including_VAT</DataField>
-        </Field>
-        <Field Name="Amount_Including_VATFormat">
-          <DataField>Amount_Including_VATFormat</DataField>
-        </Field>
-        <Field Name="Remaining_Amount">
-          <DataField>Remaining_Amount</DataField>
-        </Field>
-        <Field Name="Remaining_AmountFormat">
-          <DataField>Remaining_AmountFormat</DataField>
-        </Field>
-        <Field Name="Pay_to_Name">
-          <DataField>Pay_to_Name</DataField>
-        </Field>
-        <Field Name="Invoice_Discount_Amount">
-          <DataField>Invoice_Discount_Amount</DataField>
-        </Field>
-        <Field Name="Invoice_Discount_AmountFormat">
-          <DataField>Invoice_Discount_AmountFormat</DataField>
-        </Field>
-        <Field Name="User_ID">
-          <DataField>User_ID</DataField>
-        </Field>
-        <Field Name="Document_Date">
-          <DataField>Document_Date</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="Valor">
-          <DataField>Valor</DataField>
-        </Field>
-        <Field Name="ValorFormat">
-          <DataField>ValorFormat</DataField>
-        </Field>
-        <Field Name="Currency_Code">
-          <DataField>Currency_Code</DataField>
-        </Field>
-        <Field Name="Vendor_Invoice_No_">
-          <DataField>Vendor_Invoice_No_</DataField>
-        </Field>
-        <Field Name="CompanyInformationName">
-          <DataField>CompanyInformationName</DataField>
-        </Field>
-        <Field Name="CompanyInformationVat">
-          <DataField>CompanyInformationVat</DataField>
-        </Field>
-        <Field Name="CompanyInformationAddress">
-          <DataField>CompanyInformationAddress</DataField>
-        </Field>
-        <Field Name="CompanyInformationPhone">
-          <DataField>CompanyInformationPhone</DataField>
-        </Field>
-        <Field Name="Posting_Date">
-          <DataField>Posting_Date</DataField>
-        </Field>
-        <Field Name="VAT_Reporting_Date">
-          <DataField>VAT_Reporting_Date</DataField>
-        </Field>
-        <Field Name="Due_Date">
-          <DataField>Due_Date</DataField>
-        </Field>
-        <Field Name="Pay_to_Vendor_No_">
-          <DataField>Pay_to_Vendor_No_</DataField>
-        </Field>
-        <Field Name="Pay_to_Address">
-          <DataField>Pay_to_Address</DataField>
-        </Field>
-        <Field Name="Pay_to_Contact">
-          <DataField>Pay_to_Contact</DataField>
-        </Field>
-        <Field Name="Posting_Description">
-          <DataField>Posting_Description</DataField>
-        </Field>
-        <Field Name="DocRef">
-          <DataField>DocRef</DataField>
-        </Field>
-        <Field Name="Picture">
-          <DataField>Picture</DataField>
-        </Field>
-        <Field Name="Shortcut_Dimension_1_Code">
-          <DataField>Shortcut_Dimension_1_Code</DataField>
-        </Field>
-        <Field Name="TERCERONIT">
-          <DataField>TERCERONIT</DataField>
-        </Field>
-        <Field Name="NoCuenta_">
-          <DataField>NoCuenta_</DataField>
-        </Field>
-        <Field Name="Line_No_">
-          <DataField>Line_No_</DataField>
-        </Field>
-        <Field Name="TERCERO">
-          <DataField>TERCERO</DataField>
-        </Field>
-        <Field Name="Nombre">
-          <DataField>Nombre</DataField>
-        </Field>
-        <Field Name="DescriptionLine">
-          <DataField>DescriptionLine</DataField>
-        </Field>
-        <Field Name="Unit_Cost">
-          <DataField>Unit_Cost</DataField>
-        </Field>
-        <Field Name="Unit_CostFormat">
-          <DataField>Unit_CostFormat</DataField>
-        </Field>
-        <Field Name="AmountS">
-          <DataField>AmountS</DataField>
-        </Field>
-        <Field Name="AmountSFormat">
-          <DataField>AmountSFormat</DataField>
-        </Field>
-        <Field Name="Name">
-          <DataField>Name</DataField>
-        </Field>
-        <Field Name="VATEntry_DianDesc">
-          <DataField>VATEntry_DianDesc</DataField>
-        </Field>
-        <Field Name="VATEntry_Amount">
-          <DataField>VATEntry_Amount</DataField>
-        </Field>
-        <Field Name="VATEntry_AmountFormat">
-          <DataField>VATEntry_AmountFormat</DataField>
-        </Field>
-        <Field Name="tarifa">
-          <DataField>tarifa</DataField>
-        </Field>
-        <Field Name="tarifaFormat">
-          <DataField>tarifaFormat</DataField>
-        </Field>
-        <Field Name="numero">
-          <DataField>numero</DataField>
-        </Field>
-        <Field Name="cuenta1">
-          <DataField>cuenta1</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>

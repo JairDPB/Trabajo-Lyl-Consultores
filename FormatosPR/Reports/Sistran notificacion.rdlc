@@ -267,7 +267,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Notificación de pago</Value>
+                                  <Value>Payment Notification</Value>
                                   <Style>
                                     <FontSize>18pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -393,7 +393,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Saludos Sr(s) </Value>
+                                  <Value>Dear Sr(s) </Value>
                                   <Style />
                                 </TextRun>
                                 <TextRun>
@@ -403,7 +403,7 @@
                                   </Style>
                                 </TextRun>
                                 <TextRun>
-                                  <Value>, nos complace informarle que hemos generado los pagos para los siguientes documentos</Value>
+                                  <Value>, we are please to inform you that payments have been generated for the following documents.</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1341,7 +1341,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Fecha pago</Value>
+                                  <Value>Payment Date</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1376,7 +1376,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Label>Tipo documento</Label>
-                                  <Value>Documento</Value>
+                                  <Value>Document</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1412,7 +1412,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mensaje</Value>
+                                  <Value>Message</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1447,7 +1447,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Label>Factura</Label>
-                                  <Value>No factura</Value>
+                                  <Value>Invoice No</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1482,7 +1482,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Label>Fecha factura</Label>
-                                  <Value>Fecha factura</Value>
+                                  <Value>Invoice Date</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1517,7 +1517,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Label>Tipo Moneda</Label>
-                                  <Value>Moneda</Value>
+                                  <Value>Currency</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1551,7 +1551,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Descuento</Value>
+                                  <Value>Discount</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1589,7 +1589,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Label>Importe</Label>
-                                  <Value>Importe pagado</Value>
+                                  <Value>Amount Paid</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1746,7 +1746,6 @@
                             <PaddingRight>0.045cm</PaddingRight>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>

@@ -710,7 +710,7 @@ report 60100 "D365L Comprobante Egresos"
         layout(COL_SISTRAN_CE)
         {
             Type = RDLC;
-            LayoutFile = 'Reports/D365_PR_CompEgreso.rdl';
+            LayoutFile = 'Reports/D365_PR_CompEgreso copy.rdl';
         }
     }
     trigger OnInitReport()
