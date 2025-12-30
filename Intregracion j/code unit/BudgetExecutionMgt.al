@@ -1,4 +1,4 @@
-codeunit 50100 "Budget Execution Mgt"
+codeunit 50139 "Budget Execution Mgt"
 {
     procedure GetAccountName(AccountNo: Code[20]): Text[100]
     var

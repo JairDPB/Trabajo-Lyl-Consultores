@@ -1,4 +1,4 @@
-table 50100 "Temp Budget Report"
+table 50108 "Temp Budget Report"
 {
     DataClassification = ToBeClassified;
 

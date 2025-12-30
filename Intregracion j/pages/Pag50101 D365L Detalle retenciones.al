@@ -1,4 +1,4 @@
-page 50101 "D635L Detalle retenciones"
+page 50143 "D635L Detalle retenciones"
 {
     ApplicationArea = All;
     Caption = 'Detalle retenciones';

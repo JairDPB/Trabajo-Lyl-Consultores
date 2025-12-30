@@ -1,4 +1,4 @@
-enum 50100 "Tipo Movimiento Banco"
+enum 50113 "Tipo Movimiento Banco"
 {
     Caption = 'Tipo Movimiento Banco';
     Extensible = false;

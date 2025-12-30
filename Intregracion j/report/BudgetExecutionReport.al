@@ -1,4 +1,4 @@
-report 50101 "Budget Execution Report"
+report 50148 "Budget Execution Report"
 {
     Caption = 'Ejecución Presupuestal por Centro de Costo';
     ProcessingOnly = true;
