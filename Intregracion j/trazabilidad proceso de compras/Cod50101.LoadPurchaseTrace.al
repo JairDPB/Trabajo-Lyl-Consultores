@@ -1,24 +1,28 @@
 codeunit 50138 "Load Purchase Trace"
 {
-    trigger OnRun()
+    // Cambiar de trigger OnRun() a un procedimiento que reciba el buffer
+    procedure LoadData(var Buffer: Record "D365L Purchase Trace Buffer")
     var
         TraceQuery: Query "Purchase Trace Query";
-        Buffer: Record "D365L Purchase Trace Buffer";
-
         PurchHeader: Record "Purchase Header";
+        PurchRcptLine: Record "Purch. Rcpt. Line";
+        PurchInvLine: Record "Purch. Inv. Line";
         PurchInvHeader: Record "Purch. Inv. Header";
-
         CurrencyExchangeRate: Record "Currency Exchange Rate";
         DimSetEntry: Record "Dimension Set Entry";
+        EntryNo: Integer;
     begin
+        // Limpia buffer temporal
         Buffer.Reset();
         Buffer.DeleteAll();
-        COMMIT;
+        EntryNo := 0;
 
         TraceQuery.Open();
         while TraceQuery.Read() do begin
-            Clear(Buffer);
+            EntryNo += 1;
+
             Buffer.Init();
+            Buffer."Entry No." := EntryNo;
 
             // =========================
             // PEDIDO - LÍNEA
@@ -44,11 +48,9 @@ codeunit 50138 "Load Purchase Trace"
                 Buffer."Vendor No." := PurchHeader."Buy-from Vendor No.";
                 Buffer."Vendor Name" := PurchHeader."Buy-from Vendor Name";
                 Buffer."Order Created By" := PurchHeader."Assigned User ID";
-                
 
-                // =========================
-                // DIMENSIONES (1–8)
-                // =========================
+                // DIMENSIONES
+                DimSetEntry.Reset();
                 DimSetEntry.SetRange("Dimension Set ID", PurchHeader."Dimension Set ID");
                 if DimSetEntry.FindSet() then
                     repeat
@@ -66,9 +68,10 @@ codeunit 50138 "Load Purchase Trace"
             end;
 
             // =========================
-            // TRM (Tasa de cambio)
+            // TRM
             // =========================
             if Buffer."Currency Code" <> '' then begin
+                CurrencyExchangeRate.Reset();
                 CurrencyExchangeRate.SetRange("Currency Code", Buffer."Currency Code");
                 CurrencyExchangeRate.SetFilter("Starting Date", '<=%1', Buffer."Order Date");
                 if CurrencyExchangeRate.FindLast() then
@@ -77,33 +80,40 @@ codeunit 50138 "Load Purchase Trace"
                 Buffer.TRM := 1;
 
             // =========================
-            // RECEPCIÓN
+            // RECEPCIÓN (opcional)
             // =========================
-            Buffer."Receipt No." := TraceQuery.ReceiptNo;
-            Buffer."Receipt Date" := TraceQuery.ReceiptDate;
-            Buffer."Received Quantity" := TraceQuery.ReceivedQty;
+            PurchRcptLine.Reset();
+            PurchRcptLine.SetRange("Order No.", Buffer."Order No.");
+            PurchRcptLine.SetRange("Order Line No.", Buffer."Order Line No.");
+            if PurchRcptLine.FindFirst() then begin
+                Buffer."Receipt No." := PurchRcptLine."Document No.";
+                Buffer."Receipt Date" := PurchRcptLine."Posting Date";
+                Buffer."Received Quantity" := PurchRcptLine.Quantity;
+            end;
 
             // =========================
-            // FACTURA - LÍNEA
+            // FACTURA (opcional)
             // =========================
-            Buffer."Invoice No." := TraceQuery.InvoiceNo;
-            Buffer."Invoice Date" := TraceQuery.InvoiceDate;
-            Buffer."Invoice Item No." := TraceQuery.ItemNo; 
-            Buffer."Invoice Description" := TraceQuery.Description;
-            Buffer."Invoiced Quantity" := TraceQuery.InvQty;
-            Buffer."Invoice Unit Cost" := TraceQuery.InvUnitCost;
-            Buffer."Invoice Line Amount" := TraceQuery.InvAmount;
+            PurchInvLine.Reset();
+            PurchInvLine.SetRange("Order No.", Buffer."Order No.");
+            PurchInvLine.SetRange("Order Line No.", Buffer."Order Line No.");
+            if PurchInvLine.FindFirst() then begin
+                Buffer."Invoice No." := PurchInvLine."Document No.";
+                Buffer."Invoice Date" := PurchInvLine."Posting Date";
+                Buffer."Invoiced Quantity" := PurchInvLine.Quantity;
+                Buffer."Invoice Unit Cost" := PurchInvLine."Direct Unit Cost";
+                Buffer."Invoice Line Amount" := PurchInvLine.Amount;
 
-            // =========================
-            // FACTURA - HEADER
-            // =========================
-            if Buffer."Invoice No." <> '' then
                 if PurchInvHeader.Get(Buffer."Invoice No.") then
                     Buffer."Vendor Invoice No." := PurchInvHeader."Vendor Invoice No.";
+            end;
 
             Buffer.Insert();
         end;
 
         TraceQuery.Close();
+        
+        // Posicionar en el primer registro
+        if Buffer.FindFirst() then;
     end;
 }

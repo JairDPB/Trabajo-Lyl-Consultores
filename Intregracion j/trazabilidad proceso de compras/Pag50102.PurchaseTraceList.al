@@ -4,6 +4,7 @@ page 50110 "Purchase Trace List"
     Caption = 'Seguimiento del Proceso de Compras';
     PageType = List;
     SourceTable = "D365L Purchase Trace Buffer";
+    SourceTableTemporary = true;
     UsageCategory = Lists;
 
     layout
@@ -65,23 +66,13 @@ page 50110 "Purchase Trace List"
             }
         }
     }
-        actions
-    {
-        area(Processing)
-        {
-            action(LoadData)
-            {
-                Caption = 'Actualizar datos';
-                Image = Refresh;
-                ApplicationArea = All;
-                trigger OnAction()
-                var
-                    LoadCU: Codeunit "Load Purchase Trace";
-                begin
-                    LoadCU.Run();
-                    CurrPage.Update(false);
-                end;
-            }
-        }
-    }
+        trigger OnOpenPage()
+        
+            
+        var
+            LoadCU: Codeunit "Load Purchase Trace";
+        begin
+            LoadCU.LoadData(Rec);
+        end;
+
 }

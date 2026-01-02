@@ -2,6 +2,7 @@ page 50120 "D365L Purchase Trace API"
 {
     PageType = API;
     SourceTable = "D365L Purchase Trace Buffer";
+    SourceTableTemporary = true;
     DelayedInsert = true;
 
     APIPublisher = 'd365l';
@@ -76,4 +77,11 @@ page 50120 "D365L Purchase Trace API"
             }
         }
     }
+        trigger OnOpenPage()
+    var
+        LoadCU: Codeunit "Load Purchase Trace";
+    begin
+        LoadCU.LoadData(Rec); 
+    end;
+
 }
