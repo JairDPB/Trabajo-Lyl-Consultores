@@ -20,10 +20,10 @@ codeunit 50140 "Load GL Movements"
         // Configurar filtros en G/L Entry
         GLEntry.Reset();
         
-        // Aplicar filtro de fecha si se proporciona desde OData
+        /*// Aplicar filtro de fecha si se proporciona desde OData
         if PostingDateFilter <> '' then
             GLEntry.SetFilter("Posting Date", PostingDateFilter);
-
+*/
         // Procesar todos los movimientos contables
         if GLEntry.FindSet() then
             repeat

@@ -1,0 +1,39 @@
+{
+  "id": "515ebab2-5993-48eb-a6f6-71df8a6f95b6",
+  "name": "Reporte 8",
+  "publisher": "Default Publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+    "id": "badb1d5c-5bff-4b76-9a66-2d6d2de4183b",
+    "publisher": "D365LATAM",
+    "name": "D365LATAM - Colombia Localization",
+    "version": "23.0.46384.485733"
+  }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "26.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
