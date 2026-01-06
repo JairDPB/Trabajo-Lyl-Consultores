@@ -1,13 +1,7 @@
-/*query 50122 "D365L Budget Summary Qry"
+query 50122 "D365L Budget Summary Qry"
 {
-    QueryType = API;
-    APIPublisher = 'd365l';
-    APIGroup = 'budget';
-    APIVersion = 'v1.0';
-    EntityName = 'budgetSummary';
-    EntitySetName = 'budgetSummaries';
-    Caption = 'Budget Summary API';
-
+    QueryType = Normal;
+    
     elements
     {
         dataitem(BudgetEntry; "G/L Budget Entry")
@@ -52,21 +46,21 @@
                 Caption = 'Budget Dimension 4';
             }
 
-            column(originalAmount; "D365L Original Amount")
+            column(originalAmount; "D365L Original Amount API")
             {
                 Caption = 'Monto Original';
                 Method = Sum;
             }
-            column(adjustmentAmount; "D365L Adjustment")
+            column(adjustmentAmount; "D365L Adjustment API")
             {
                 Caption = 'Monto de Ajuste';
                 Method = Sum;
             }
-            column(budgetAmount; Amount)
+            column(budgetAmount; "Amount")
             {
                 Caption = 'Monto del Presupuesto';
                 Method = Sum;
             }
         }
     }
-}*/
+}
