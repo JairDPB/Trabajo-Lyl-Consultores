@@ -1,0 +1,51 @@
+{
+  "id": "b37e3921-423c-44f0-a727-b9507d9e7956",
+  "name": "LyLSistranIntegBC365",
+  "publisher": "LyL Consultores",
+  "version": "1.0.0.26",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "badb1d5c-5bff-4b76-9a66-2d6d2de4183b",
+      "publisher": "LyL Consultores",
+      "name": "LYL Localization Colombia",
+      "version": "21.0.46384.48476" 
+    },
+    {
+      "id": "481fbe70-e372-4d51-9d08-d7a22691a7c8",
+      "publisher": "LyL Consultores",
+      "name": "FE_LYL_COL",
+      "version": "1.0.0.25" 
+    },
+    {
+      "id": "53f98167-b3d7-437b-a4af-a85e868cf53f",
+      "publisher": "LyL Consultores",
+      "name": "BC365 Documentos y formatos",
+      "version": "1.0.0.28" 
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "21.0.0.0",
+  "idRanges": [
+    {
+      "from": 50400,
+      "to": 50419
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "10.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
