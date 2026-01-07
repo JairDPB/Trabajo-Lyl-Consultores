@@ -12,6 +12,8 @@ report 50149 "Impuestos"
         {
             DataItemTableView = sorting("Buy-from Vendor No.", "Posting Date");
             RequestFilterFields = "Posting Date", "Buy-from Vendor No.";
+            column(CompanyInformationName; CompanyInformation.Name) { }
+            column(CompanyInformationVATRegistrationNo; CompanyInformation."VAT Registration No.") { }
 
             column(TipoDocumento; 'Factura') { }
             column(NoDocumento; "No.") { }
@@ -89,7 +91,7 @@ report 50149 "Impuestos"
     requestpage
     {
         SaveValues = true;
-        
+
         layout
         {
             area(Content)
@@ -113,8 +115,15 @@ report 50149 "Impuestos"
             }
         }
     }
+    trigger OnInitReport()
+    var
+        myInt: Integer;
+    begin
+        CompanyInformation.get();
+    end;
 
     var
+        CompanyInformation: Record "Company Information";
         VATEntry: Record "VAT Entry";
         IVA: Decimal;
         ReteIVA: Decimal;
