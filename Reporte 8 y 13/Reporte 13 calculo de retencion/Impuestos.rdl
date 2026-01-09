@@ -2174,7 +2174,7 @@
         <Height>6.1415cm</Height>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
         </Style>
       </Body>
