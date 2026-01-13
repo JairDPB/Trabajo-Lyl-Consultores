@@ -53,8 +53,8 @@ table 50130 "Payroll Electronic Document"
         field(66; "SegundoApellido"; Text[50]) { }
         field(67; "PrimerNombre"; Text[50]) { }
         field(68; "LugarTrabajoPais"; Code[10]) { }
-        field(69; "LugarTrabajoDepartamento"; Code[10]) { }
-        field(70; "LugarTrabajoMunicipio"; Code[10]) { }
+        field(69; "LugarTrabajoDepartamentoEstado"; Code[10]) { }
+        field(70; "LugarTrabajoMunicipioCiudad"; Code[10]) { }
         field(71; "LugarTrabajoDireccion"; Text[100]) { }
         field(72; "SalarioIntegral"; Boolean) { }
         field(73; "TipoContrato"; Code[10]) { }
