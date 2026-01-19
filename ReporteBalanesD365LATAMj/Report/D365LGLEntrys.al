@@ -41,6 +41,7 @@ report 90148 D365LGLEntrys
             }
         trigger OnAfterGetRecord()
             var
+                General_Ledger_Setup: Record "General Ledger Setup";
                 DimensionSetEntry: Record "Dimension Set Entry";
                 DimensionValue: Record "Dimension Value";
                 NoSeries: Record "No. Series";
@@ -49,12 +50,14 @@ report 90148 D365LGLEntrys
                 //Obtener Centro de Costo - Dimensión CC
                 CostCenterCode := '';
                 CostCenterName := '';
+                General_Ledger_Setup.Get();
+                GlobalDimension1Code := General_Ledger_Setup."Global Dimension 1 Code";
                 
                 DimensionSetEntry.SetRange("Dimension Set ID", GLEntry."Dimension Set ID");
-                DimensionSetEntry.SetRange("Dimension Code", 'CC');
+                DimensionSetEntry.SetRange("Dimension Code", GlobalDimension1Code);
                 if DimensionSetEntry.FindFirst() then begin
                     CostCenterCode := DimensionSetEntry."Dimension Value Code";
-                    if DimensionValue.Get('CC', DimensionSetEntry."Dimension Value Code") then
+                    if DimensionValue.Get(GlobalDimension1Code, DimensionSetEntry."Dimension Value Code") then
                         CostCenterName := DimensionValue.Name;
                 end;
                 
@@ -62,7 +65,7 @@ report 90148 D365LGLEntrys
                 NoSeriesCode := '';
                 NoSeriesDescription := '';
                 
-                // Buscar la serie que corresponde al documento
+                // Buscar la serie del documento
                 NoSeries.Reset();
                 if NoSeries.FindSet() then
                     repeat
@@ -82,7 +85,7 @@ report 90148 D365LGLEntrys
                             until NoSeriesLine.Next() = 0;
                     until (NoSeries.Next() = 0) or (NoSeriesCode <> '');
                 
-                // 3. Calcular Periodo Contable (formato: Mes Año)
+                //Calcular Periodo Contable (formato: Mes Año)
                 AccountingPeriod := Format(GLEntry."Posting Date", 0, '<Month Text> <Year4>');
             end;
         trigger OnPreDataItem()
@@ -143,4 +146,5 @@ report 90148 D365LGLEntrys
         NoSeriesCode: Code[20];
         NoSeriesDescription: Text[100];
         AccountingPeriod: Text[50];
+        GlobalDimension1Code: Code[20];
 }
