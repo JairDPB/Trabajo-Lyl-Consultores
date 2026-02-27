@@ -1,0 +1,58 @@
+{
+  "id": "989fb502-5271-49ba-b38c-9df866912784",
+  "name": "D365LMejiaPersonalizacion",
+  "publisher": "Default Publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "badb1d5c-5bff-4b76-9a66-2d6d2de4183b",
+      "publisher": "D365LATAM",
+      "name": "D365LATAM - Colombia Localization",
+      "version": "26.0.0.1"
+    },
+    
+    {
+    "id": "53f98167-b3d7-437b-a4af-a85e868cf53f",
+    "publisher": "D365LATAM",
+    "name": "D365LATAM Formatos",
+    "version": "1.0.0.175"
+  },
+  {    
+        "id": "62f6b186-0152-467b-a2d3-f14716f6048c",
+    "name": "D365LATAM FE",
+    "version": "1.0.0.125",
+    "publisher": "D365LATAM"
+  },
+  {    
+        "id": "decdc030-82ca-47e4-b8ac-024cd011fc09",
+    "name": "D365LATAM Documento Soporte",
+    "version": "1.0.0.91",
+    "publisher": "D365LATAM"
+  }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "27.0.0.0",
+  "idRanges": [
+    {
+      "from": 88100,
+      "to": 88110
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": false,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "16.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
