@@ -15,6 +15,9 @@ report 88100 "D365L Nota CreditoM"
         {
             RequestFilterFields = "No.";
             DataItemTableView = SORTING("No.");
+
+            column(presupuesto; presupuesto) { }
+            column(NoOrden; noOrden) { }
             column(Currency_Code; "Currency Code") { }
             column(SalesCrMemoHdrNo_; "No.") { }
             column(SalesCrMemoHdrDimensionSetID; "Dimension Set ID") { }
@@ -45,7 +48,6 @@ report 88100 "D365L Nota CreditoM"
             column(SalesCrMemoHdrPay_to_Contact_No_; "Sell-to Contact No.") { }
             column(SalesCrMemoHdrLyL_CUFE; "D365L CO FE CUFE") { }
             column(SalesCrMemoHdrCurrency_Factor; currencyF) { }
-
             column(SalesCrMemoHdrLyL_QRInvoiceLink; "D365L CO fe QRInvoiceLink") { }
             column(D365L_CO_Resolution_No_; TempNoSeriesLine."D365L CO Resolution No.") { }
             //  column(D365L_CO_FE_Prefix; ) { }
@@ -82,6 +84,34 @@ report 88100 "D365L Nota CreditoM"
             {
                 DataItemLink = "No." = field("Sell-to Customer No.");
                 column(CustVAT_Registration_No_; "VAT Registration No.") { }
+                column(ThirdNo1; ThirdNo1) { }
+                column(ThirdNo2; ThirdNo2) { }
+                column(CustomerAddress; CustomerAddress) { }
+                column(CustomerPhone; CustomerPhone) { }
+                column(CustomerEmail; CustomerEmail) { }
+                column(CustomerNit; CustomerNit) { }
+                trigger OnAfterGetRecord()
+    var
+        BillToCustomer: Record Customer;
+        begin
+            ThirdNo1 := Name;
+
+                if SalesCrMemoHdr."Bill-to Customer No." <> SalesCrMemoHdr."Sell-to Customer No." then begin
+                    if BillToCustomer.Get(SalesCrMemoHdr."Bill-to Customer No.") then begin
+                        ThirdNo2 := BillToCustomer.Name;
+                        CustomerAddress := BillToCustomer.Address;
+                        CustomerPhone := BillToCustomer."Phone No.";
+                        CustomerEmail := BillToCustomer."E-Mail";
+                        CustomerNit := BillToCustomer."VAT Registration No.";
+                    end;
+                end else begin
+                    ThirdNo2 := ThirdNo1;
+                    CustomerAddress := Address;
+                    CustomerPhone := "Phone No.";
+                    CustomerEmail := "E-Mail";
+                    CustomerNit := "VAT Registration No.";
+                end;
+        end;
             }
 
             dataitem(User; User)
@@ -120,7 +150,7 @@ report 88100 "D365L Nota CreditoM"
                     lylQueryGeneralTax.Open();
 
                 end;
-
+                
                 trigger OnAfterGetRecord()
                 var
                 //  temptax: Code[20];
@@ -166,6 +196,7 @@ report 88100 "D365L Nota CreditoM"
                 column(SalesCrMemoLineUnit_of_Measure; "Unit of Measure Code") { }
                 column(OrgLineAmount; OrgLineAmount) { }
                 column(OrgLineUnitPrice; OrgLineUnitPrice) { }
+
                 dataitem("G/L Account"; "G/L Account")
                 {
                     DataItemTableView = SORTING("No.");
@@ -215,7 +246,7 @@ report 88100 "D365L Nota CreditoM"
                 column(Debit_Amount; "Debit Amount") { }
                 column(Credit_Amount; "Credit Amount") { }
             }
-
+            
             trigger OnAfterGetRecord()
             var
                 numberToText: Codeunit "LyL NumberToText_ING";
@@ -229,8 +260,10 @@ report 88100 "D365L Nota CreditoM"
                 SIH: Record "Sales Invoice Header";
                 DIANSETUP: Record "D365L CO DIAN Setup";
                 User: Record User;
+                
 
             begin
+                
                 FormaPago := '';
                 numLineas := 0;
                 CufeDocRef := '';
@@ -265,6 +298,8 @@ report 88100 "D365L Nota CreditoM"
                     end else begin
                         CufeDocRef := SalesCrMemoHdr."D365L CO FE CUFE_DocRef_text";
                     end;
+                    presupuesto := SIH.Presupuesto;
+                    noOrden := SIH."No orden";
 
 
                 end else begin
@@ -441,6 +476,14 @@ report 88100 "D365L Nota CreditoM"
 
 
     var
+        ThirdNo1: Text[100];
+        ThirdNo2: Text[100];
+        CustomerAddress: Text[100];
+        CustomerPhone: Text[50];
+        CustomerEmail: Text[100];
+        CustomerNit: Text[50];
+        presupuesto: Text[100];
+        noOrden : Text[100];
         DisContable: Boolean;
         User_NameCreator: Text[100];
         AmountIncVat: decimal;

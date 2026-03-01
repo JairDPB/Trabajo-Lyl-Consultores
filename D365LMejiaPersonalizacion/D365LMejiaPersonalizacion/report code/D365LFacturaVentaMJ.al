@@ -10,6 +10,8 @@ reportextension 88100 "D365L SalesInvoiceExt" extends "D365L Factura Venta"
             column(CustomerAddress; CustomerAddress) { }
             column(CustomerPhone; CustomerPhone) { }
             column(CustomerNit; CustomerNit) { }
+            column(NoOrden; NoOrden) { }
+            column(Presupuesto; Presupuesto) { }
         }
         modify("Sales Invoice Header")
         {
@@ -46,6 +48,8 @@ reportextension 88100 "D365L SalesInvoiceExt" extends "D365L Factura Venta"
         }
     }
     var
+        NoOrden: Text;
+        Presupuesto: Text;
         ThirdNo1: text;
         ThirdNo2: text;
         CustomerEmail: text;
