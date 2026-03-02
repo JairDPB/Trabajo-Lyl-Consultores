@@ -10,8 +10,8 @@ report 88101 "D365LCheque"
     {
         dataitem("Gen. Journal Line"; "Gen. Journal Line")
         {
-            RequestFilterFields = "Journal Template Name", "Journal Batch Name";
-
+            RequestFilterFields = "Journal Template Name", "Journal Batch Name", "Document No.";
+            
             column(Posting_Date; "Posting Date")
             {
 
@@ -34,6 +34,12 @@ report 88101 "D365LCheque"
             column(Year; Year) { }
             column(Month; Month) { }
             column(Day; Day) { }
+            trigger OnPreDataItem()
+            begin
+                // Filtrar solo cheques manuales
+                SetRange("Bank Payment Type", "Bank Payment Type"::"Manual Check");
+            end;
+
             trigger OnAfterGetRecord()
             var
                 AmountText: array[2] of Text;
@@ -47,11 +53,15 @@ report 88101 "D365LCheque"
                 cliente: Record Customer;
                 BannkA: Record "Bank Account";
             begin
-                //TotalA := GetTotalAmount("Gen. Journal Line"."amount");}
+                GenJournalLine.Reset();
+                GenJournalLine.SetRange("Journal Template Name", "Gen. Journal Line"."Journal Template Name");
+                GenJournalLine.SetRange("Journal Batch Name", "Gen. Journal Line"."Journal Batch Name");
+                GenJournalLine.SetRange("Document No.", "Gen. Journal Line"."Document No.");
                 GenJournalLine.SetFilter("Account Type", '%1', GenJournalLine."Account Type"::"Bank Account");
-                GenJournalLine.SetFilter("Journal Batch Name", "Gen. Journal Line"."Journal Batch Name");
-
+                //TotalA := GetTotalAmount("Gen. Journal Line"."amount");}
+                
                 if GenJournalLine.FindFirst() then begin
+                    BankA.Reset();
                     BankA.SetFilter("No.", GenJournalLine."Account No.");
                     if BankA.FindFirst() then begin
                         bankaa := BankA."Bank Account No.";
