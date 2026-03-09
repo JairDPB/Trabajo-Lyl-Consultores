@@ -4,7 +4,7 @@
 report 88100 "D365L Nota CreditoM"
 {
     ApplicationArea = All;
-    Caption = 'Nota Credito';
+    Caption = 'Nota CreditoM';
     RDLCLayout = 'Report/D365LNotaCreditoM.rdl';
     UsageCategory = ReportsAndAnalysis;
     DefaultLayout = RDLC;
@@ -45,7 +45,7 @@ report 88100 "D365L Nota CreditoM"
             column(SalesCrMemoHdrPay_to_Contact; "sell-to Contact") { }
             column(SalesCrMemoHdrPosting_Description; getworkdescription) { }
             column(SalesCrMemoHdrPay_to_City; "Sell-to City") { }
-            column(SalesCrMemoHdrPay_to_Contact_No_; "Sell-to Contact No.") { }
+            column(SalesCrMemoHdrPay_to_Contact_No_; "Sell-to Phone No.") { }
             column(SalesCrMemoHdrLyL_CUFE; "D365L CO FE CUFE") { }
             column(SalesCrMemoHdrCurrency_Factor; currencyF) { }
             column(SalesCrMemoHdrLyL_QRInvoiceLink; "D365L CO fe QRInvoiceLink") { }
@@ -90,6 +90,7 @@ report 88100 "D365L Nota CreditoM"
                 column(CustomerPhone; CustomerPhone) { }
                 column(CustomerEmail; CustomerEmail) { }
                 column(CustomerNit; CustomerNit) { }
+                column(CustomerContact; "Mobile Phone No.") { }
                 trigger OnAfterGetRecord()
     var
         BillToCustomer: Record Customer;

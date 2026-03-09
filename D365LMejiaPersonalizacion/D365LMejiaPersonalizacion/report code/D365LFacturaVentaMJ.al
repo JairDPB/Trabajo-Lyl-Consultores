@@ -12,23 +12,41 @@ reportextension 88100 "D365L SalesInvoiceExt" extends "D365L Factura Venta"
             column(CustomerNit; CustomerNit) { }
             column(NoOrden; NoOrden) { }
             column(Presupuesto; Presupuesto) { }
+
         }
         modify("Sales Invoice Header")
         {
             trigger OnAfterAfterGetRecord()
             var
-                Customer: Record Customer;
+                CustomerRec: Record Customer;
             begin
-                Customer.Get("Sell-to Customer No.");
-                ThirdNo1 := Customer.Name;
-                if "Bill-to Customer No." <> "Sell-to Customer No." then begin
-                    Customer.Get("Bill-to Customer No.");
-                    ThirdNo2 := Customer.Name;
-                    CustomerAddress := customer.Address;
-                    CustomerPhone := customer."Phone No.";
-                    CustomerEmail := customer."E-Mail";
-                    CustomerNit := customer."VAT Registration No.";
-                end else
+                if CustomerRec.Get("Sell-to Customer No.") then
+                    ThirdNo1 := CustomerRec.Name;
+
+                if not CustomerRec.Get("Bill-to Customer No.") then
+                    Clear(CustomerRec);
+
+                if "Ship-to Name" <> '' then
+                    ThirdNo2 := "Ship-to Name"
+                else
+                    ThirdNo2 := CustomerRec.Name;
+
+                if "Ship-to Address" <> '' then
+                    CustomerAddress := "Ship-to Address"
+                else
+                    CustomerAddress := CustomerRec.Address;
+
+                if "Ship-to Phone No." <> '' then 
+                    CustomerPhone := "Ship-to Phone No."
+                else
+                    CustomerPhone := CustomerRec."Phone No.";
+
+                // 3. Campos que normalmente no están en el Ship-to del Header (Email y NIT)
+                CustomerEmail := CustomerRec."E-Mail";
+                CustomerNit := "Ship-to Code";
+
+                
+                if ThirdNo2 = '' then
                     ThirdNo2 := ThirdNo1;
             end;
         }
