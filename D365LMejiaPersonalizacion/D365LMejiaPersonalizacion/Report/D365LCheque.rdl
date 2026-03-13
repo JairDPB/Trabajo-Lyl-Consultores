@@ -11,6 +11,70 @@
       <rd:DataSourceID>30e12cda-2a5b-430d-84ac-9fd5de5896f7</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="Posting_Date">
+          <DataField>Posting_Date</DataField>
+        </Field>
+        <Field Name="Account_No_">
+          <DataField>Account_No_</DataField>
+        </Field>
+        <Field Name="consecutivo">
+          <DataField>consecutivo</DataField>
+        </Field>
+        <Field Name="companyName">
+          <DataField>companyName</DataField>
+        </Field>
+        <Field Name="companyVatR">
+          <DataField>companyVatR</DataField>
+        </Field>
+        <Field Name="tercero">
+          <DataField>tercero</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="totala">
+          <DataField>totala</DataField>
+        </Field>
+        <Field Name="totalaFormat">
+          <DataField>totalaFormat</DataField>
+        </Field>
+        <Field Name="DocNo">
+          <DataField>DocNo</DataField>
+        </Field>
+        <Field Name="Banco">
+          <DataField>Banco</DataField>
+        </Field>
+        <Field Name="CuentaB">
+          <DataField>CuentaB</DataField>
+        </Field>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+        </Field>
+        <Field Name="Month">
+          <DataField>Month</DataField>
+        </Field>
+        <Field Name="Day">
+          <DataField>Day</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -439,7 +503,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Year.Value, "DataSet_Result")</Value>
+                    <Value>=Mid(CStr(First(Fields!Year.Value, "DataSet_Result")),1,1) &amp; Space(2) &amp;
+ Mid(CStr(First(Fields!Year.Value, "DataSet_Result")),2,1) &amp; Space(2) &amp;
+ Mid(CStr(First(Fields!Year.Value, "DataSet_Result")),3,1) &amp; Space(2) &amp;
+ Mid(CStr(First(Fields!Year.Value, "DataSet_Result")),4,1)</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -591,6 +658,12 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -630,68 +703,4 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="Posting_Date">
-          <DataField>Posting_Date</DataField>
-        </Field>
-        <Field Name="Account_No_">
-          <DataField>Account_No_</DataField>
-        </Field>
-        <Field Name="consecutivo">
-          <DataField>consecutivo</DataField>
-        </Field>
-        <Field Name="companyName">
-          <DataField>companyName</DataField>
-        </Field>
-        <Field Name="companyVatR">
-          <DataField>companyVatR</DataField>
-        </Field>
-        <Field Name="tercero">
-          <DataField>tercero</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="totala">
-          <DataField>totala</DataField>
-        </Field>
-        <Field Name="totalaFormat">
-          <DataField>totalaFormat</DataField>
-        </Field>
-        <Field Name="DocNo">
-          <DataField>DocNo</DataField>
-        </Field>
-        <Field Name="Banco">
-          <DataField>Banco</DataField>
-        </Field>
-        <Field Name="CuentaB">
-          <DataField>CuentaB</DataField>
-        </Field>
-        <Field Name="Year">
-          <DataField>Year</DataField>
-        </Field>
-        <Field Name="Month">
-          <DataField>Month</DataField>
-        </Field>
-        <Field Name="Day">
-          <DataField>Day</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>

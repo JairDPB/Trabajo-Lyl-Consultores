@@ -341,12 +341,6 @@ report 88100 "D365L Nota CreditoM"
                     AmountIncVat := Round(lines."Amount Including VAT", 0.01, '=');
 
                 end;
-
-                /*   if (currencyText = '') or (currencyText = 'COP') then begin
-                       currency := 'COP';
-                   end
-                   else
-                       currency := currencyText;*/
                 numberToText.FormatNoText(AmountText, AmountIncVat, 'COP');
                 AmountInWords := AmountText[1] + AmountText[2];
 
@@ -407,8 +401,7 @@ report 88100 "D365L Nota CreditoM"
 
                 if NoValor <> '' then begin
                     SetFilter("No.", NoValor);
-                end /*else
-                    Error('Debe seleccionar un documento');*/
+                end 
             end;
         }
     }
@@ -436,7 +429,6 @@ report 88100 "D365L Nota CreditoM"
                             dim: Record "Sales Cr.Memo Header";
                             pag: Page "Posted Sales Credit Memos";
                         begin
-                            //dim.SetRange("D365L CO fe Status_EBill", dim."D365L CO fe Status_EBill"::PROCESADA);
                             pag.SETTABLEVIEW(dim);
                             pag.LOOKUPMODE(TRUE);
                             IF pag.RUNMODAL = ACTION::LookupOK THEN BEGIN
