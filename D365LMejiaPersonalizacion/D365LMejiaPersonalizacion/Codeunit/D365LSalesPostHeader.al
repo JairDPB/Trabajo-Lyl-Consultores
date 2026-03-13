@@ -1,4 +1,4 @@
-codeunit 88102 SalesPostSubscriber
+/*codeunit 88102 SalesPostSubscriber
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterSalesInvHeaderInsert', '', false, false)]
     local procedure OnAfterSalesInvHeaderInsert(var SalesInvHeader: Record "Sales Invoice Header"; SalesHeader: Record "Sales Header")
@@ -7,4 +7,4 @@ codeunit 88102 SalesPostSubscriber
         SalesInvHeader."Presupuesto" := SalesHeader."Presupuesto";
         SalesInvHeader.Modify();
     end;
-}
+}*/

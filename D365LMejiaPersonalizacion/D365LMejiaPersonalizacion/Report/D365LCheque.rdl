@@ -24,145 +24,6 @@
       <rd:DataSourceID>30e12cda-2a5b-430d-84ac-9fd5de5896f7</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="Posting_Date">
-          <DataField>Posting_Date</DataField>
-        </Field>
-        <Field Name="Account_No_">
-          <DataField>Account_No_</DataField>
-        </Field>
-        <Field Name="consecutivo">
-          <DataField>consecutivo</DataField>
-        </Field>
-        <Field Name="companyName">
-          <DataField>companyName</DataField>
-        </Field>
-        <Field Name="companyVatR">
-          <DataField>companyVatR</DataField>
-        </Field>
-        <Field Name="tercero">
-          <DataField>tercero</DataField>
-        </Field>
-        <Field Name="AmountInWords">
-          <DataField>AmountInWords</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="totala">
-          <DataField>totala</DataField>
-        </Field>
-        <Field Name="totalaFormat">
-          <DataField>totalaFormat</DataField>
-        </Field>
-        <Field Name="DocNo">
-          <DataField>DocNo</DataField>
-        </Field>
-        <Field Name="Banco">
-          <DataField>Banco</DataField>
-        </Field>
-        <Field Name="CuentaB">
-          <DataField>CuentaB</DataField>
-        </Field>
-        <Field Name="Year">
-          <DataField>Year</DataField>
-        </Field>
-        <Field Name="Month">
-          <DataField>Month</DataField>
-        </Field>
-        <Field Name="ParDisContable">
-          <DataField>ParDisContable</DataField>
-        </Field>
-        <Field Name="Day">
-          <DataField>Day</DataField>
-        </Field>
-        <Field Name="totalAmount_">
-          <DataField>totalAmount_</DataField>
-        </Field>
-        <Field Name="totalAmount_Format">
-          <DataField>totalAmount_Format</DataField>
-        </Field>
-        <Field Name="VendorName">
-          <DataField>VendorName</DataField>
-        </Field>
-        <Field Name="VendorAddress">
-          <DataField>VendorAddress</DataField>
-        </Field>
-        <Field Name="VendorPhone_No_">
-          <DataField>VendorPhone_No_</DataField>
-        </Field>
-        <Field Name="VendorCity">
-          <DataField>VendorCity</DataField>
-        </Field>
-        <Field Name="VendorVAT_Registration_No_Vendor">
-          <DataField>VendorVAT_Registration_No_Vendor</DataField>
-        </Field>
-        <Field Name="VendorE_Mail">
-          <DataField>VendorE_Mail</DataField>
-        </Field>
-        <Field Name="User_Security_ID">
-          <DataField>User_Security_ID</DataField>
-        </Field>
-        <Field Name="User_Name">
-          <DataField>User_Name</DataField>
-        </Field>
-        <Field Name="CLENo_">
-          <DataField>CLENo_</DataField>
-        </Field>
-        <Field Name="CLEDocumentDate">
-          <DataField>CLEDocumentDate</DataField>
-        </Field>
-        <Field Name="CLEexternal">
-          <DataField>CLEexternal</DataField>
-        </Field>
-        <Field Name="CLEDescription_">
-          <DataField>CLEDescription_</DataField>
-        </Field>
-        <Field Name="CLEamount">
-          <DataField>CLEamount</DataField>
-        </Field>
-        <Field Name="CLEamountFormat">
-          <DataField>CLEamountFormat</DataField>
-        </Field>
-        <Field Name="ClEVendLedEntLAmountWDiscCur">
-          <DataField>ClEVendLedEntLAmountWDiscCur</DataField>
-        </Field>
-        <Field Name="ClEVendLedEntLAmountWDiscCurFormat">
-          <DataField>ClEVendLedEntLAmountWDiscCurFormat</DataField>
-        </Field>
-        <Field Name="G_LEntDebit_Amount">
-          <DataField>G_LEntDebit_Amount</DataField>
-        </Field>
-        <Field Name="G_LEntDebit_AmountFormat">
-          <DataField>G_LEntDebit_AmountFormat</DataField>
-        </Field>
-        <Field Name="G_LEntCredit_Amount">
-          <DataField>G_LEntCredit_Amount</DataField>
-        </Field>
-        <Field Name="G_LEntCredit_AmountFormat">
-          <DataField>G_LEntCredit_AmountFormat</DataField>
-        </Field>
-        <Field Name="G_LEnt_Account_No">
-          <DataField>G_LEnt_Account_No</DataField>
-        </Field>
-        <Field Name="G_LAccName">
-          <DataField>G_LAccName</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -919,12 +780,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -962,4 +817,143 @@ End Function
 </Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Posting_Date">
+          <DataField>Posting_Date</DataField>
+        </Field>
+        <Field Name="Account_No_">
+          <DataField>Account_No_</DataField>
+        </Field>
+        <Field Name="consecutivo">
+          <DataField>consecutivo</DataField>
+        </Field>
+        <Field Name="companyName">
+          <DataField>companyName</DataField>
+        </Field>
+        <Field Name="companyVatR">
+          <DataField>companyVatR</DataField>
+        </Field>
+        <Field Name="tercero">
+          <DataField>tercero</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="totala">
+          <DataField>totala</DataField>
+        </Field>
+        <Field Name="totalaFormat">
+          <DataField>totalaFormat</DataField>
+        </Field>
+        <Field Name="DocNo">
+          <DataField>DocNo</DataField>
+        </Field>
+        <Field Name="Banco">
+          <DataField>Banco</DataField>
+        </Field>
+        <Field Name="CuentaB">
+          <DataField>CuentaB</DataField>
+        </Field>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+        </Field>
+        <Field Name="Month">
+          <DataField>Month</DataField>
+        </Field>
+        <Field Name="ParDisContable">
+          <DataField>ParDisContable</DataField>
+        </Field>
+        <Field Name="Day">
+          <DataField>Day</DataField>
+        </Field>
+        <Field Name="totalAmount_">
+          <DataField>totalAmount_</DataField>
+        </Field>
+        <Field Name="totalAmount_Format">
+          <DataField>totalAmount_Format</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="VendorAddress">
+          <DataField>VendorAddress</DataField>
+        </Field>
+        <Field Name="VendorPhone_No_">
+          <DataField>VendorPhone_No_</DataField>
+        </Field>
+        <Field Name="VendorCity">
+          <DataField>VendorCity</DataField>
+        </Field>
+        <Field Name="VendorVAT_Registration_No_Vendor">
+          <DataField>VendorVAT_Registration_No_Vendor</DataField>
+        </Field>
+        <Field Name="VendorE_Mail">
+          <DataField>VendorE_Mail</DataField>
+        </Field>
+        <Field Name="User_Security_ID">
+          <DataField>User_Security_ID</DataField>
+        </Field>
+        <Field Name="User_Name">
+          <DataField>User_Name</DataField>
+        </Field>
+        <Field Name="CLENo_">
+          <DataField>CLENo_</DataField>
+        </Field>
+        <Field Name="CLEDocumentDate">
+          <DataField>CLEDocumentDate</DataField>
+        </Field>
+        <Field Name="CLEexternal">
+          <DataField>CLEexternal</DataField>
+        </Field>
+        <Field Name="CLEDescription_">
+          <DataField>CLEDescription_</DataField>
+        </Field>
+        <Field Name="CLEamount">
+          <DataField>CLEamount</DataField>
+        </Field>
+        <Field Name="CLEamountFormat">
+          <DataField>CLEamountFormat</DataField>
+        </Field>
+        <Field Name="ClEVendLedEntLAmountWDiscCur">
+          <DataField>ClEVendLedEntLAmountWDiscCur</DataField>
+        </Field>
+        <Field Name="ClEVendLedEntLAmountWDiscCurFormat">
+          <DataField>ClEVendLedEntLAmountWDiscCurFormat</DataField>
+        </Field>
+        <Field Name="G_LEntDebit_Amount">
+          <DataField>G_LEntDebit_Amount</DataField>
+        </Field>
+        <Field Name="G_LEntDebit_AmountFormat">
+          <DataField>G_LEntDebit_AmountFormat</DataField>
+        </Field>
+        <Field Name="G_LEntCredit_Amount">
+          <DataField>G_LEntCredit_Amount</DataField>
+        </Field>
+        <Field Name="G_LEntCredit_AmountFormat">
+          <DataField>G_LEntCredit_AmountFormat</DataField>
+        </Field>
+        <Field Name="G_LEnt_Account_No">
+          <DataField>G_LEnt_Account_No</DataField>
+        </Field>
+        <Field Name="G_LAccName">
+          <DataField>G_LAccName</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
