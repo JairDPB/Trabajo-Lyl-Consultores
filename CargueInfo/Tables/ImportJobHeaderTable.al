@@ -1,4 +1,4 @@
-table 50100 "D365L_Import Job Header"
+table 50148 "D365L_Import Job Header"
 {
     Caption = 'Import Job Header';
     DataClassification = ToBeClassified; 

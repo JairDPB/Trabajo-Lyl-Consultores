@@ -1,4 +1,4 @@
-table 50101 "D365L_Import Saldos Line"
+table 50149 "D365L_Import Saldos Line"
 
 {
 
