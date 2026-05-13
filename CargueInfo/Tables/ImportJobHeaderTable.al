@@ -1,53 +1,76 @@
 table 50148 "D365L_Import Job Header"
 {
     Caption = 'Import Job Header';
-    DataClassification = ToBeClassified; 
+    DataClassification = ToBeClassified;
     fields
     {
         field(1; "Entry No."; Integer)
         {
-            Caption = 'Entry No.';
-            AutoIncrement = true; 
+            Caption = 'N.º de entrada';
+            AutoIncrement = true;
         }
+
         field(2; "Entity"; Option)
         {
-            Caption = 'Entity';
+            Caption = 'Entidad';
             OptionMembers = Saldos,Proveedores,Clientes,Items;
             OptionCaption = 'Saldos financieros,Proveedores,Clientes,Items';
         }
+
         field(3; "Status"; Option)
         {
-            Caption = 'Status';
+            Caption = 'Estado';
             OptionMembers = Pendiente,Validando,ConErrores,Validado,Procesado;
             OptionCaption = 'Pendiente,Validando,Con errores,Validado,Procesado';
         }
+
         field(4; "Import DateTime"; DateTime)
         {
-            Caption = 'Import Date/Time';
+            Caption = 'Fecha y hora de importación';
         }
+
         field(5; "Imported By User"; Code[50])
         {
-            Caption = 'Imported By User';
+            Caption = 'Importado por usuario';
         }
+
         field(6; "Source File Name"; Text[250])
         {
-            Caption = 'Source File Name';
+            Caption = 'Nombre del archivo origen';
         }
+
         field(7; "Gen. Jnl. Template"; Code[10])
         {
-            Caption = 'Gen. Jnl. Template';
+            Caption = 'Plantilla diario general';
             TableRelation = "Gen. Journal Template";
         }
+
         field(8; "Gen. Jnl. Batch"; Code[10])
         {
-            Caption = 'Gen. Jnl. Batch';
+            Caption = 'Lote diario general';
             TableRelation = "Gen. Journal Batch".Name
-                WHERE("Journal Template Name" = FIELD("Gen. Jnl. Template"));
+        WHERE("Journal Template Name" = FIELD("Gen. Jnl. Template"));
         }
-        field(9; "Has Errors"; Boolean) { Caption = 'Has Errors'; }
-        field(10; "Lines Count"; Integer) { Caption = 'Lines Count'; }
-        field(11; "Valid Lines Count"; Integer) { Caption = 'Valid Lines Count'; }
-        field(12; "Error Lines Count"; Integer) { Caption = 'Error Lines Count'; }
+
+        field(9; "Has Errors"; Boolean)
+        {
+            Caption = 'Tiene errores';
+        }
+
+        field(10; "Lines Count"; Integer)
+        {
+            Caption = 'Cantidad de líneas';
+        }
+
+        field(11; "Valid Lines Count"; Integer)
+        {
+            Caption = 'Cantidad de líneas válidas';
+        }
+
+        field(12; "Error Lines Count"; Integer)
+        {
+            Caption = 'Cantidad de líneas con error';
+        }
     }
     keys
     {
